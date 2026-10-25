@@ -1,0 +1,32 @@
+connectors:
+  Driver:
+    pincount: 12
+    type: Dupont 2.54 6x2
+    subtype: female
+    pinlabels: [V+, V+, GND, GND, IN1B, IN1A, IN2B, IN2A, ENB, ENA, CTB, CTA]
+  CN10-13-24:
+    pincount: 12
+    type: Dupont 2.54 6x2
+    subtype: female
+    pinlabels: [PA6, PA11, PA7, PB12, PB6, NC, PC7, GND, PA9, PB2, PA8, PB1]
+  CN10-25-38:
+    pincount: 14
+    type: Dupont 2.54 7x2
+    subtype: female
+    pinlabels: [PB10, PB15, PB4, PB14, PB5, PB13, PB3, AGND, PA10, PC4, NC,NC,NC,NC]
+
+cables:
+  W1:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    colors: [GY, VT, BU, GN, YE, OG, RD, BN]
+    wirecount: 8
+    shield: false
+    show_equiv: true # auto-calculate AWG equivalent
+
+connections:
+  -
+    - Driver: [4,5,6,8,7]
+    - W1: [1,2,3,4,5]
+    - CN10-13-24: [8,11,2,9,12]

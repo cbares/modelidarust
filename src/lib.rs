@@ -7,4 +7,5 @@ pub mod tasks{
     pub mod odometry;
     pub mod uart_usb;
     pub mod watchdog;
+    pub mod motors;
 }

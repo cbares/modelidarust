@@ -1,0 +1,27 @@
+connectors:
+  X1:
+    pincount: 12
+    type: Dupont 2.54 6x2
+    subtype: female
+    pinlabels: [GND, VCC, CANL, CANH]
+  X2:
+    pincount: 12
+    type: Dupont 2.54 6x2
+    subtype: female
+    pinlabels: [GND, VCC, CANL, CANH]
+  
+cables:
+  W1:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    colors: [BK, RD, WH, YE]
+    wirecount: 4
+    shield: true
+    show_equiv: true # auto-calculate AWG equivalent
+
+connections:
+  -
+    - X1: [1,2,3,4]
+    - W1: [1,2,3,4]
+    - X2: [1,2,3,4]

@@ -1,6 +1,6 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
-#runner = ["probe-rs", "run", "--chip", "STM32F446RE"]
-runner = ["probe-rs", "run", "--chip", "STM32F411RE", "--connect-under-reset"]
+runner = ["probe-rs", "run", "--chip", "STM32F446RE"]
+#runner = ["probe-rs", "run", "--chip", "STM32F411RE", "--connect-under-reset"]
 
 linker = "flip-link"
 

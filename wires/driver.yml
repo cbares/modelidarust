@@ -1,0 +1,98 @@
+connectors:
+  Driver:
+    pincount: 12
+    type: Dupont 2.54 6x2
+    subtype: female
+    pinlabels: [V+, V+, GND, GND, IN1B, IN1A, IN2B, IN2A, ENB, ENA, CTB, CTA]
+
+  CN10-1-12:
+    pincount: 12
+    type: Dupont 2.54 6x2
+    subtype: female
+    pinlabels: [PC9, PC8, PB8,PC6, PB9, PC5, AVDD, U5V, GND, NC,PA5, PA12]
+
+  CN10-13-24:
+    pincount: 12
+    type: Dupont 2.54 6x2
+    subtype: female
+    pinlabels: [PA6, PA11, PA7, PB12, PB6, NC, PC7, GND, PA9, PB2, PA8, PB1]
+  CN10-25-38:
+    pincount: 10
+    type: Dupont 2.54 5x2
+    subtype: female
+    pinlabels: [PB10, PB15, PB4, PB14, PB5, PB13, PB3, AGND, PA10, PC4]
+  CN7-17-20:
+    pincount: 4
+    type: Dupont 2.54 2x2
+    subtype: female
+    pinlabels: [PA15, +5V, GND, GND]
+  CN7-27-30:
+    pincount: 4
+    type: Dupont 2.54 2x2
+    subtype: female
+    pinlabels: [PC15, PA0, PH0, PA1] 
+  encoder-right:
+    pincount: 4
+    pinlabels: [A, B, V+, GND]
+  encoder-left:
+    pincount: 4
+    pinlabels: [A, B, V+, GND]
+cables:
+  W0:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    colors: [BK]
+    wirecount: 1
+    shield: false
+    show_equiv: true # auto-calculate AWG equivalent
+  W1:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    colors: [GY, VT, BU, GN, YE, OG, RD, BN]
+    wirecount: 8
+    shield: false
+    show_equiv: true # auto-calculate AWG equivalent
+  W2:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    colors: [YE, WH, RD, BK]
+    wirecount: 4
+    shield: false
+    show_equiv: true # auto-calculate AWG equivalent
+  W3:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    colors: [YE, WH, BK, RD]
+    wirecount: 4
+    shield: false
+    show_equiv: true # auto-calculate AWG equivalent
+
+connections:
+  -
+    - Driver: [4,6,8,7]
+    - W1: [1,2,4,5]
+    - CN10-13-24: [8,11,9,2]
+  - 
+    - Driver: [5, 9,10]
+    - W1: [3,6,7]
+    - CN10-25-38: [9, 7, 10]
+
+  -
+    - encoder-right: [1,2,3,4]
+    - W2: [1,2,3,4]
+    - CN10-1-12: [3,5,8,9]
+  - 
+    - encoder-left: [3,4]
+    - W3: [3,4]
+    - CN7-17-20: [2,4]
+  -
+    - encoder-left: [1,2]
+    - W3: [1,2]
+    - CN7-27-30: [2,4]
+  -
+    - Driver: [3]
+    - W0: [1]

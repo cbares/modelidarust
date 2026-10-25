@@ -12,32 +12,33 @@ use modelidar::board::Board;
 use modelidar::tasks::uart_usb::uart_task;
 use modelidar::tasks::odometry::odometry_task;
 use modelidar::tasks::watchdog::watchdog_task;
+use modelidar::tasks::motors::motors_task;
 
 
 #[embassy_executor::main]
  async fn main(spawner: Spawner) {
-    let board = Board::new();
-
+    let mut board = Board::new();
     let mut led = board.led;
-    let mut serial = board.serial_usb;
-    let qei_left = board.qei_left;
-    let qei_right = board.qei_right;
+  
+    info!("MCU started");
+    board.serial_usb.write(b"MCU started\r\n").await.unwrap();
     
     // Spawn the watchdog task with a 10ms timeout
-    spawner.spawn(watchdog_task(board.iwdg, 10000).unwrap());
-    
-    info!("Starting blink example");
-    serial.write(b"MCU started\r\n").await.unwrap();
+    let watchdog_timeout_us = 10_000;
+    spawner.spawn(watchdog_task(board.iwdg, watchdog_timeout_us).unwrap());
     
     // Spawn the UART communication task
-    spawner.spawn(uart_task(serial).unwrap());
+    spawner.spawn(uart_task(board.serial_usb).unwrap());
     
     // Spawn the odometry task
     let odom_interval = Duration::from_millis(100);
-    spawner.spawn(odometry_task(odom_interval, qei_left, qei_right).unwrap());
+    spawner.spawn(odometry_task(odom_interval, board.qei_left, board.qei_right).unwrap());
 
+    // Spawn the motors task
+    spawner.spawn(motors_task(board.motor_left, board.motor_right).unwrap());
 
-    let mut ticker = Ticker::every(Duration::from_millis(1000));
+    let main_loop_duration = Duration::from_secs(10);
+    let mut ticker = Ticker::every(main_loop_duration);
 
     loop {
         led.toggle();

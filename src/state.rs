@@ -7,6 +7,14 @@ use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 pub struct MotorCmd {
     pub alpha_left: i32,
     pub alpha_right: i32,
+    max_speed: i32,
+}
+
+impl  MotorCmd {
+    pub fn new(alpha_left: i32, alpha_right: i32, max_speed: i32) -> Self {
+        Self { alpha_left, alpha_right, max_speed }
+    }
+    
 }
 
 #[derive(Clone, Copy)]
@@ -23,7 +31,12 @@ pub struct Odom {
 
 
 pub static MOTOR_CMD: Mutex<CriticalSectionRawMutex, Cell<MotorCmd>> =
-    Mutex::new(Cell::new(MotorCmd { alpha_left: 0, alpha_right: 0 }));
+    Mutex::new(Cell::new(MotorCmd {
+        alpha_left: 0,
+        alpha_right: 0,
+        max_speed: 0,
+    }));
+
 
 pub static ODOM_STATE: Mutex<CriticalSectionRawMutex, Cell<OdomState>> =
     Mutex::new(Cell::new(OdomState {
