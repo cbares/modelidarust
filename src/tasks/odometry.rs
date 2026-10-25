@@ -27,21 +27,28 @@ macro_rules! make_odometry_task {
 
 pub struct Encoder<T: GeneralInstance4Channel> {
     qei:  Qei<'static, T>,
-    previous: i32,
+    /// Dernière valeur brute du compteur matériel (16 bits).
+    previous: u16,
+    /// Position cumulée, sans débordement à 65535.
+    position: i32,
     interval: Duration,
 }
 
 impl<T: GeneralInstance4Channel> Encoder<T> {
     pub fn new(qei: Qei<'static, T>, interval: Duration) -> Self {
-        let previous = qei.count() as i32;
-        Self { qei, previous, interval }
+        let previous = qei.count();
+        Self { qei, previous, position: 0, interval }
     }
 
     pub fn read(&mut self) -> Odom {
-        let position = self.qei.count() as i32;
-        let velocity = (position - self.previous) as f32 / self.interval.as_micros() as f32 * 1_000_000.0;
-        self.previous = position;
-        Odom { position, velocity }
+        let count = self.qei.count();
+        // Différence en arithmétique modulo 2^16 : correcte au passage 65535 <-> 0,
+        // tant que l'encodeur fait moins de 32768 pas entre deux lectures.
+        let delta = count.wrapping_sub(self.previous) as i16 as i32;
+        self.previous = count;
+        self.position = self.position.wrapping_add(delta);
+        let velocity = delta as f32 / self.interval.as_micros() as f32 * 1_000_000.0;
+        Odom { position: self.position, velocity }
     }
 }
 
