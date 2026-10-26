@@ -1,5 +1,5 @@
 connectors:
-  Driver:
+  "Driver DBH-12V":
     pincount: 12
     type: Dupont 2.54 6x2
     subtype: female
@@ -73,11 +73,11 @@ cables:
 
 connections:
   -
-    - Driver: [4,6,8,7]
+    - "Driver DBH-12V": [4,6,8,7]
     - W1: [1,2,4,5]
     - CN10-13-24: [8,11,9,2]
   - 
-    - Driver: [5, 9,10]
+    - "Driver DBH-12V": [5, 9,10]
     - W1: [3,6,7]
     - CN10-25-38: [9, 7, 10]
 
@@ -94,5 +94,5 @@ connections:
     - W3: [1,2]
     - CN7-27-30: [2,4]
   -
-    - Driver: [3]
+    - "Driver DBH-12V": [3]
     - W0: [1]

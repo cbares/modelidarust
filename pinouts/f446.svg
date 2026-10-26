@@ -1,0 +1,4971 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1420" 
+    height="838" 
+    viewBox="0 0 1420 838"
+    class="diagram layout"
+>
+
+<defs>
+    
+</defs>
+
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    /* Styles des schémas de brochage (pinout) */
+
+text {
+    font-family: "DejaVu Sans", Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* Fond des panneaux */
+.panel__outer { fill: #ffffff; stroke: none; }
+.panel__inner { fill: #ffffff; stroke: none; }
+.panel--info .panel__inner { fill: #f7f7f7; }
+
+.h1 { font-size: 22px; font-weight: bold; fill: #222; }
+.text_block { fill: #333; }
+
+/* Carte */
+.board-outline { fill: #f4f4f1; stroke: #9a9a92; stroke-width: 2; }
+.header { fill: #2b2b2b; }
+.pad { fill: #c9a227; }
+.board-ref { font-size: 12px; text-anchor: middle; fill: #777; font-style: italic; }
+.connector-name { font-size: 15px; font-weight: bold; text-anchor: middle; fill: #222; }
+.pin-number { font-size: 10px; text-anchor: middle; fill: #666; }
+
+/* Étiquettes */
+.pinlabel__leader { stroke-width: 2; fill: none; }
+.pinlabel__text {
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pin .pinlabel__body, .pin .swatch__body { fill: #4a4a4a; }
+.pin .pinlabel__leader { stroke: #4a4a4a; }
+
+.motor .pinlabel__body, .motor .swatch__body { fill: #c0392b; }
+.motor .pinlabel__leader { stroke: #c0392b; }
+
+.encoder .pinlabel__body, .encoder .swatch__body { fill: #2471a3; }
+.encoder .pinlabel__leader { stroke: #2471a3; }
+
+.rc .pinlabel__body, .rc .swatch__body { fill: #8e44ad; }
+.rc .pinlabel__leader { stroke: #8e44ad; }
+
+.uart .pinlabel__body, .uart .swatch__body { fill: #1e8449; }
+.uart .pinlabel__leader { stroke: #1e8449; }
+
+.board .pinlabel__body, .board .swatch__body { fill: #b9770e; }
+.board .pinlabel__leader { stroke: #b9770e; }
+
+.pwr .pinlabel__body, .pwr .swatch__body { fill: #e67e22; }
+.pwr .pinlabel__leader { stroke: #e67e22; }
+
+.gnd .pinlabel__body, .gnd .swatch__body { fill: #000000; }
+.gnd .pinlabel__leader { stroke: #000000; }
+
+/* Légende */
+.legend__bg { fill: none; }
+.legendentry text { dominant-baseline: central; fill: #222; }
+
+    ]]>  
+</style>
+<g 
+        class="panel"
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_439"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1420" 
+    height="838" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_438"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1416" 
+    height="834" 
+/><g 
+        class="panel--main panel"
+transform="
+    translate(0.5 0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_441"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1416" 
+    height="678" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_440"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1415.0" 
+    height="677.0" 
+/><g 
+transform="
+    translate(0 12) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_9"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="board-outline"
+transform="
+    translate(312 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_10"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="796" 
+    height="640" 
+    rx="10" 
+    ry="10" 
+/><text
+
+        class="board-ref"
+transform="
+    translate(710.0 636) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_11"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Nucleo-64 · MB1136
+</text><rect
+
+        class="header"
+transform="
+    translate(334 50) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_12"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="568" 
+    rx="2" 
+    ry="2" 
+/><text
+
+        class="connector-name"
+transform="
+    translate(360.0 16) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_13"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN7
+</text><text
+
+        class="pin-number"
+transform="
+    translate(346 42) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_14"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    1
+</text><text
+
+        class="pin-number"
+transform="
+    translate(374 42) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_15"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    2
+</text><text
+
+        class="pin-number"
+transform="
+    translate(346 636) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_16"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    37
+</text><text
+
+        class="pin-number"
+transform="
+    translate(374 636) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_17"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    38
+</text><rect
+
+        class="pad"
+transform="
+    translate(340 58) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_18"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 58) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_19"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 88) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_20"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 88) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_21"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 118) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_22"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 118) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_23"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 148) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_24"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 148) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_25"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 178) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_26"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 178) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_27"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 208) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_28"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 208) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_29"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 238) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_30"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 238) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_31"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 268) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_32"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 268) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_33"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 298) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_34"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 298) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_35"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 328) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_36"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 328) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_37"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 358) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_38"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 358) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_39"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 388) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_40"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 388) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_41"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 418) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_42"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 418) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_43"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 448) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_44"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 448) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_45"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 478) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_46"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 478) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_47"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 508) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_48"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 508) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_49"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 538) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_50"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 538) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_51"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 568) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_52"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 568) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_53"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(340 598) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_54"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(368 598) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_55"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="header"
+transform="
+    translate(1034 50) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_56"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="568" 
+    rx="2" 
+    ry="2" 
+/><text
+
+        class="connector-name"
+transform="
+    translate(1060.0 16) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_57"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10
+</text><text
+
+        class="pin-number"
+transform="
+    translate(1046 42) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_58"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    1
+</text><text
+
+        class="pin-number"
+transform="
+    translate(1074 42) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_59"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    2
+</text><text
+
+        class="pin-number"
+transform="
+    translate(1046 636) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_60"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    37
+</text><text
+
+        class="pin-number"
+transform="
+    translate(1074 636) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_61"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    38
+</text><rect
+
+        class="pad"
+transform="
+    translate(1040 58) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_62"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 58) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_63"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 88) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_64"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 88) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_65"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 118) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_66"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 118) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_67"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 148) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_68"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 148) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_69"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 178) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_70"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 178) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_71"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 208) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_72"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 208) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_73"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 238) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_74"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 238) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_75"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 268) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_76"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 268) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_77"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 298) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_78"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 298) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_79"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 328) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_80"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 328) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_81"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 358) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_82"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 358) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_83"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 388) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_84"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 388) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_85"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 418) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_86"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 418) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_87"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 448) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_88"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 448) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_89"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 478) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_90"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 478) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_91"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 508) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_92"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 508) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_93"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 538) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_94"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 538) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_95"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 568) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_96"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 568) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_97"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1040 598) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_98"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><rect
+
+        class="pad"
+transform="
+    translate(1068 598) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_99"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(1046 94) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_100"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_101"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_102"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_444"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_442"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PB8
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_104"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_106"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_447"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_445"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM2_CH1
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_110"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_111"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_450"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_448"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur G · A
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_115"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 124) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_116"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_117"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_118"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_453"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_451"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PB9
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_120"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_122"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_456"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_454"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM2_CH2
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_126"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_127"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_459"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_457"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur G · B
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_131"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1074 154) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_132"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_133"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pwr"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_134"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_462"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_460"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    U5V
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_136"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel pwr"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_138"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_465"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_463"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur G
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_142"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 184) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_143"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_144"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel gnd"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_145"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_468"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_466"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GND
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_147"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_149"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_471"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_469"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur G
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_153"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 214) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_154"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_155"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_156"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_474"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_472"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA5
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_158"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel board"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_160"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_477"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_475"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GPIO
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_164"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel board"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_165"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_480"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_478"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    LED LD2
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_169"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1074 244) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_170"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_171"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_172"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_483"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_481"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA11
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_174"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_176"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_486"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_484"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH4
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_180"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(182.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_181"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_489"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_487"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN2B · mot. D
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_185"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1074 334) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_186"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_187"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel gnd"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_188"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_492"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_490"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GND
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_190"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_192"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_495"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_493"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Driver
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_196"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 364) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_197"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_198"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_199"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_498"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_496"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA9
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_201"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_203"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_501"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_499"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH2
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_207"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_208"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_504"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_502"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN2A · mot. G
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_212"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 394) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_213"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_214"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_215"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_507"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_505"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA8
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_217"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_219"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_510"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_508"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH1
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_223"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_224"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_513"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_511"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN1A · mot. G
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_228"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 514) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_229"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_230"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_231"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_516"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_514"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PB3
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_233"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_235"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_519"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_517"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GPIO
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_239"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_240"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_522"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_520"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    ENB · mot. D
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_244"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 544) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_245"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_246"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_247"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_525"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_523"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA10
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_249"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_251"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_528"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_526"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH3
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_255"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_256"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_531"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_529"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN1B · mot. D
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_260"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1074 544) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_261"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_262"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_263"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_534"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_532"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PC4
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_265"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_267"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_537"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_535"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GPIO
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_271"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(182.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_272"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_540"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_538"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    ENA · mot. G
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_276"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 574) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_277"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_278"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_279"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_543"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_541"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA2
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_281"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel uart"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_283"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_546"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_544"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    USART2_TX
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_287"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel uart"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_288"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_549"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_547"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    VCP ST-Link
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_292"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(1046 604) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_293"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_294"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_295"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_552"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_550"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA3
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_297"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel uart"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_299"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_555"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_553"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    USART2_RX
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_303"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel uart"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_304"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_558"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_556"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    VCP ST-Link
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_308"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(374 94) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_309"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_310"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_311"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_561"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_559"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PD2
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_313"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel rc"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_315"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_564"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_562"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    UART5_RX
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_319"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel rc"
+transform="
+    translate(182.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_320"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_567"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_565"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    SBUS (inversé)
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_324"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(374 304) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_325"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_326"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pwr"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_327"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_570"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_568"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    +5V
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_329"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel pwr"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_331"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_573"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_571"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur D
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_335"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(374 334) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_336"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_337"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel gnd"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_338"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_576"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_574"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GND
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_340"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_342"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_579"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_577"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur D
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_346"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(346 394) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_347"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_348"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_349"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_582"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_580"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PC13
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_351"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel board"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_353"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_585"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_583"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GPIO
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_357"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel board"
+transform="
+    translate(-182.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_358"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_588"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_586"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Bouton B1
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_362"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(374 454) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_363"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_364"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_365"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_591"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_589"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA0
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_367"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_369"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_594"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_592"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM5_CH1
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_373"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(182.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_374"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_597"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_595"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur D · A
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_378"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+transform="
+    translate(374 484) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_379"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_380"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pin"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_381"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_600"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_598"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PA1
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_383"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_385"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_603"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="92" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(52.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_601"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM5_CH2
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_389"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel encoder"
+transform="
+    translate(182.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_390"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_606"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="128" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(70.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_604"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeur D · B
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_394"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel--info panel"
+transform="
+    translate(0.5 678.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_7"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_608"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1416" 
+    height="156" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_607"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1415.0" 
+    height="155.0" 
+/><g 
+        class="panel title_block textblock"
+transform="
+    translate(20 34) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_395"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_609"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    <tspan class='h1'>Nucleo-F446RE (MB1136) · modelidar</tspan>
+</text>
+</g><g 
+        class="panel text_block textblock"
+transform="
+    translate(20 68) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_396"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_610"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    SBUS : 100 000 bauds 8E2, inverseur matériel obligatoire (pas de RXINV sur F4).
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 20) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_611"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    USART2 (PA2/PA3) est relié au ST-Link (port série USB) : absent de CN10 sans changer SB62/SB63.
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 40) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_612"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Horloge 180 MHz (HSE 8 MHz du ST-Link), PWM moteurs 20 kHz.
+</text>
+</g><g 
+        class=" legend"
+transform="
+    translate(1052 14) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_397"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="pin legendentry"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_398"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_399"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_400"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_402"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Broche MCU
+</text>
+</g><g 
+        class="motor legendentry"
+transform="
+    translate(0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_403"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_404"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_405"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_407"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Moteurs
+</text>
+</g><g 
+        class="encoder legendentry"
+transform="
+    translate(0 56.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_408"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_409"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_410"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_412"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Codeurs
+</text>
+</g><g 
+        class="rc legendentry"
+transform="
+    translate(0 84.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_413"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_414"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_415"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_417"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Radio SBUS
+</text>
+</g><g 
+        class="uart legendentry"
+transform="
+    translate(159.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_418"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_419"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_420"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_422"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    USB série
+</text>
+</g><g 
+        class="board legendentry"
+transform="
+    translate(159.0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_423"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_424"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_425"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_427"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Carte
+</text>
+</g><g 
+        class="pwr legendentry"
+transform="
+    translate(159.0 56.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_428"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_429"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_430"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_432"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Alim. 5 V
+</text>
+</g><g 
+        class="gnd legendentry"
+transform="
+    translate(159.0 84.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_433"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_434"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_435"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a3444959-c8d6-4b6c-af0c-c4e9452a5961_437"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Masse
+</text>
+</g>
+</g>
+</g>
+</g>
+    
+</svg>

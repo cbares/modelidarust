@@ -1,4 +1,4 @@
-//! Nucleo-64 STM32F446RE, 180 MHz.
+//! Nucleo-64 STM32F446RE (carte MB1136), 180 MHz.
 
 use defmt::info;
 use embassy_stm32::gpio::{Input, Level, Output, Pull, Speed};

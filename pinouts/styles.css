@@ -1,0 +1,61 @@
+/* Styles des schémas de brochage (pinout) */
+
+text {
+    font-family: "DejaVu Sans", Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* Fond des panneaux */
+.panel__outer { fill: #ffffff; stroke: none; }
+.panel__inner { fill: #ffffff; stroke: none; }
+.panel--info .panel__inner { fill: #f7f7f7; }
+
+.h1 { font-size: 22px; font-weight: bold; fill: #222; }
+.text_block { fill: #333; }
+
+/* Carte */
+.board-outline { fill: #f4f4f1; stroke: #9a9a92; stroke-width: 2; }
+.header { fill: #2b2b2b; }
+.pad { fill: #c9a227; }
+.board-ref { font-size: 12px; text-anchor: middle; fill: #777; font-style: italic; }
+.connector-name { font-size: 15px; font-weight: bold; text-anchor: middle; fill: #222; }
+.pin-number { font-size: 10px; text-anchor: middle; fill: #666; }
+
+/* Étiquettes */
+.pinlabel__leader { stroke-width: 2; fill: none; }
+.pinlabel__text {
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pin .pinlabel__body, .pin .swatch__body { fill: #4a4a4a; }
+.pin .pinlabel__leader { stroke: #4a4a4a; }
+
+.motor .pinlabel__body, .motor .swatch__body { fill: #c0392b; }
+.motor .pinlabel__leader { stroke: #c0392b; }
+
+.encoder .pinlabel__body, .encoder .swatch__body { fill: #2471a3; }
+.encoder .pinlabel__leader { stroke: #2471a3; }
+
+.rc .pinlabel__body, .rc .swatch__body { fill: #8e44ad; }
+.rc .pinlabel__leader { stroke: #8e44ad; }
+
+.uart .pinlabel__body, .uart .swatch__body { fill: #1e8449; }
+.uart .pinlabel__leader { stroke: #1e8449; }
+
+.board .pinlabel__body, .board .swatch__body { fill: #b9770e; }
+.board .pinlabel__leader { stroke: #b9770e; }
+
+.pwr .pinlabel__body, .pwr .swatch__body { fill: #e67e22; }
+.pwr .pinlabel__leader { stroke: #e67e22; }
+
+.gnd .pinlabel__body, .gnd .swatch__body { fill: #000000; }
+.gnd .pinlabel__leader { stroke: #000000; }
+
+/* Légende */
+.legend__bg { fill: none; }
+.legendentry text { dominant-baseline: central; fill: #222; }

@@ -1,4 +1,4 @@
-//! Nucleo-64 STM32F411RE, 100 MHz.
+//! Nucleo-64 STM32F411RE (carte MB1136), 100 MHz.
 //!
 //! Différences de brochage avec la F446 :
 //! - encodeur gauche sur TIM3 PB4 / PB5 (PB8 / PB9 ne sont pas des voies 1-2 de timer sur F411) ;

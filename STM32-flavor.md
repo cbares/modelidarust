@@ -1,8 +1,13 @@
 # Listes des cartes nucleo compatibles
 
+Toutes les cartes ci-dessous sont des Nucleo-64 sur base MB1136 : connecteurs morpho
+CN7 / CN10 identiques (schémas de brochage dans `pinouts/`). Une future Nucleo-G431RB
+sera sur base MB1367 (manuel UM2505), dont le brochage morpho diffère par endroits.
+
 ## Nucleo64-F446RE
 
 - <https://www.st.com/en/evaluation-tools/nucleo-f446re.html>
+- Carte : MB1136 (Nucleo-64, manuel UM1724)
 - Flash : 512 KB
 - RAM : 128 KB
 - MCU : STM32F446RE
@@ -54,6 +59,7 @@ USART3: 115200 bauds, 8N1, 16 oversampling, No Pull, Very high speed, AF7
 ## Nucleo64-F411RE
 
 - <https://www.st.com/en/evaluation-tools/nucleo-f411re.html>
+- Carte : MB1136 (Nucleo-64, manuel UM1724)
 - Flash : 512 KB
 - RAM : 128 KB
 - MCU : STM32F411RE
@@ -100,6 +106,7 @@ TIM1, Ch4 for **PA11**
 ## Nucleo64-L476RG
 
 - <https://www.st.com/en/evaluation-tools/nucleo-l476rg.html>
+- Carte : MB1136 (Nucleo-64, manuel UM1724)
 - Flash : 1 MB
 - RAM : 128 KB
 - MCU : STM32L476RG
@@ -126,6 +133,7 @@ PROBE_RS_CHIP=STM32L476RG cargo run --no-default-features --features stm32l476rg
 ## Nucleo64-F410RB
 
 - <https://www.st.com/en/evaluation-tools/nucleo-f410rb.html>
+- Carte : MB1136 (Nucleo-64, manuel UM1724)
 - Flash : 128 KB
 - RAM : 32 KB
 - MCU : STM32F410RB

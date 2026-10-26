@@ -1,4 +1,4 @@
-//! Nucleo-64 STM32L476RG, 80 MHz.
+//! Nucleo-64 STM32L476RG (carte MB1136), 80 MHz.
 //!
 //! Différences de brochage avec la F446 :
 //! - encodeur gauche sur TIM3 PB4 / PB5 (PB8 / PB9 ne sont pas des voies 1-2 de timer sur L476) ;
