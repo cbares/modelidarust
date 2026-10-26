@@ -1,0 +1,10 @@
+[package]
+name = "teleop"
+version = "0.1.0"
+edition = "2024"
+description = "Télécommande en terminal pour modelidar, via la liaison série USB"
+publish = false
+
+[dependencies]
+ratatui = "0.30"
+serialport = { version = "4.10", default-features = false }

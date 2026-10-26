@@ -1,0 +1,3 @@
+# Outil PC : on annule la cible ARM imposée par le .cargo/config.toml du firmware.
+[build]
+target = "host-tuple"
