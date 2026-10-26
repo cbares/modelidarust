@@ -2,6 +2,7 @@
 name = "teleop"
 version = "0.1.0"
 edition = "2024"
+license = "MIT OR Apache-2.0"
 description = "Télécommande en terminal pour modelidar, via la liaison série USB"
 publish = false
 
