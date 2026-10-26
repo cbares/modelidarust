@@ -66,6 +66,23 @@ USART3: 115200 bauds, 8N1, 16 oversampling, No Pull, Very high speed, AF7
 - 1 CRC
 - 1 ADC 12 bits / 16 canaux
 
+Brochage utilisé par le firmware (`src/board/f411.rs`), différences avec la F446 en gras :
+
+| Fonction         | Broches                                  | Remarque                                  |
+|------------------|------------------------------------------|-------------------------------------------|
+| PWM moteurs TIM1 | PA8, PA9, PA10, PA11 (enables PC4 / PB3) | identique                                 |
+| Encodeur gauche  | **TIM3 : PB4 (CN10-27) / PB5 (CN10-29)** | PB8/PB9 ne sont pas des voies QEI sur F411 |
+| Encodeur droit   | TIM5 : PA0 / PA1                         | identique                                 |
+| USART2 (VCP)     | PA2 / PA3                                | identique                                 |
+| SBUS             | **USART6 RX : PC7 (CN10-19)**            | pas d'UART5 sur F411                      |
+| Horloge          | 100 MHz, TIM1 à 100 MHz                  | max duty PWM = 5000 à 20 kHz              |
+
+Compilation / flash :
+
+```sh
+PROBE_RS_CHIP=STM32F411RE cargo run --no-default-features --features stm32f411re
+```
+
 TIM3, Ch1 for PA6, PB4, PC6
 TIM3, Ch2 for **PA7**, PB5, PC7
 TIM3, Ch3 for PB0, PC8

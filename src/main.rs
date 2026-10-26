@@ -35,7 +35,7 @@ use modelidar::tasks::motors::motors_task;
     spawner.spawn(odometry_task(odom_interval, board.qei_left, board.qei_right).unwrap());
 
     // Spawn the motors task
-    spawner.spawn(motors_task(board.motor_left, board.motor_right).unwrap());
+    spawner.spawn(motors_task(board.motor_left, board.motor_right, board.max_duty).unwrap());
 
     let main_loop_duration = Duration::from_secs(10);
     let mut ticker = Ticker::every(main_loop_duration);

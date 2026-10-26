@@ -14,11 +14,12 @@ pub static MOTOR_UPDATE:  Signal<CriticalSectionRawMutex, MotorCommand>  = Signa
 
 
 #[embassy_executor::task]
-pub async fn motors_task(mut left: MotorDriverType, mut right: MotorDriverType) {
+pub async fn motors_task(mut left: MotorDriverType, mut right: MotorDriverType, max_duty: u16) {
 
     left.enable().unwrap();
     right.enable().unwrap();
-    let coef = 9000 / ZERO ;
+    // Consigne dans [-ZERO, ZERO] → rapport cyclique dans [-max_duty, max_duty].
+    let coef = max_duty as i32 / ZERO;
 
     loop {
         match MOTOR_UPDATE.wait().await{

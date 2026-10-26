@@ -1,6 +1,6 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
-runner = ["probe-rs", "run", "--chip", "STM32F446RE"]
-#runner = ["probe-rs", "run", "--chip", "STM32F411RE", "--connect-under-reset"]
+# La puce vient de PROBE_RS_CHIP (défini dans [env], surchargeable depuis le shell).
+runner = ["probe-rs", "run"]
 
 linker = "flip-link"
 
@@ -11,6 +11,8 @@ rustflags = [
 
 [env]
 DEFMT_LOG = "info"
+# Valeur par défaut ; une variable déjà présente dans le shell est prioritaire.
+PROBE_RS_CHIP = "STM32F446RE"
 
 [build]
 target = "thumbv7em-none-eabihf" # Cortex-M4
