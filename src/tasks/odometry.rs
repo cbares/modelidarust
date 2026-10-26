@@ -4,6 +4,9 @@ use embassy_time::{Ticker, Duration};
 use crate::board::{QeiLeft, QeiRight};
 use crate::state::{ODOM_STATE, OdomState, Odom};
 
+/// Pas codeur par tour de roue, tels que comptés par le timer en mode QEI.
+pub const TICKS_PER_REV: f32 = 544.0;
+
 /// Les timers des encodeurs sont fixés par la carte (voir `board::QeiLeft` / `QeiRight`).
 #[embassy_executor::task]
 pub async fn odometry_task(interval: Duration, qei_left: QeiLeft, qei_right: QeiRight) {

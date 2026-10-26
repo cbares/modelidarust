@@ -5,7 +5,7 @@ use heapless::{String, format, Vec};
 use static_cell::StaticCell;
 
 use crate::state::ODOM_STATE;
-use crate::tasks::motors::{MOTOR_STATE, MotorCommand, Owner, USB_CMD};
+use crate::tasks::motors::{Fault, MOTOR_STATE, MotorCommand, Owner, USB_ALIVE, USB_CMD};
 
 const CMD_LENGTH: usize = 10; // "#AAAA,BBBB"
 const STEPS: i32 = 1000;
@@ -74,9 +74,11 @@ pub async fn uart_task(
             _ => continue,
         };
 
-        if let Some(cmd) = cmd {
-            // Ignorée par la tâche moteurs si la radiocommande a la main.
-            USB_CMD.signal(cmd);
+        match cmd {
+            // Ignorée par la tâche moteurs si la radiocommande a la main ou si une roue est bloquée.
+            Some(cmd) => USB_CMD.signal(cmd),
+            // Une requête seule prouve aussi que le PC est là (voir USB_TIMEOUT).
+            None => USB_ALIVE.signal(()),
         }
         transmit_state(&mut serial_tx, cmd).await;
     }
@@ -98,7 +100,7 @@ fn parse_pattern(buf: [u8; CMD_LENGTH]) -> Option<(i32, i32)> {
 }
 
 
-/// Envoie `!AAAA,BBBB L:vit,pos R:vit,pos C:<pilote>`.
+/// Envoie `!AAAA,BBBB L:vit,pos R:vit,pos C:<pilote> F:<défaut>`.
 /// La consigne affichée est celle réellement appliquée aux moteurs : si la radio
 /// a la main, une commande USB n'y apparaît donc pas.
 async fn transmit_state(serial: &mut UartTx<'static, Async>, sent: Option<MotorCommand>) {
@@ -106,11 +108,11 @@ async fn transmit_state(serial: &mut UartTx<'static, Async>, sent: Option<MotorC
     let odom_left = &state.odom_left;
     let odom_right = &state.odom_right;
 
-    let (owner, applied) = MOTOR_STATE.lock(|s| s.get());
+    let status = MOTOR_STATE.lock(|s| s.get());
     // La tâche moteurs n'a peut-être pas encore traité la commande qu'on vient d'envoyer.
     let shown = match sent {
-        Some(cmd) if owner == Owner::Usb => cmd,
-        _ => applied,
+        Some(cmd) if status.owner == Owner::Usb && status.fault != Fault::Stall => cmd,
+        _ => status.applied,
     };
     let (alpha_l, alpha_r) = match shown {
         MotorCommand::SetSpeed(alpha_left, alpha_right) => {
@@ -121,11 +123,11 @@ async fn transmit_state(serial: &mut UartTx<'static, Async>, sent: Option<MotorC
         },
     };
 
-    let buf: String<96> = format!("!{:04},{:04} L:{:+},{:+} R:{:+},{:+} C:{}\r\n",
+    let buf: String<112> = format!("!{:04},{:04} L:{:+},{:+} R:{:+},{:+} C:{} F:{}\r\n",
             alpha_l, alpha_r,
             odom_left.velocity, odom_left.position,
             odom_right.velocity, odom_right.position,
-            owner.tag()).expect("format macro failed");
+            status.owner.tag(), status.fault.tag()).expect("format macro failed");
     serial.write(buf.as_bytes()).await.unwrap();
     debug!("state transmitted");
 }
