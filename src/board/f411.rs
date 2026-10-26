@@ -12,7 +12,7 @@ use embassy_stm32::timer::qei::{Config as QeiConfig, Qei};
 use embassy_stm32::usart::{self, Config as UartConfig, Uart, UartRx};
 use embassy_stm32::{bind_interrupts, dma, peripherals};
 
-use super::{Board, init_motors};
+use super::{Board, init_motors, sbus_config};
 
 /// Encodeur gauche : TIM3 sur PB4 / PB5 (CN10-27 / CN10-29).
 pub type QeiLeft = Qei<'static, TIM3>;
@@ -79,7 +79,7 @@ impl Board {
             init_motors(p.TIM1, p.PA8, p.PA9, p.PA10, p.PA11, p.PC4, p.PB3);
 
         // === Récepteur SBUS sur USART6 ===
-        let sbus = UartRx::new(p.USART6, p.PC7, p.DMA2_CH1, Irqs, UartConfig::default())
+        let sbus = UartRx::new(p.USART6, p.PC7, p.DMA2_CH1, Irqs, sbus_config())
             .expect("USART6 unavailable");
 
         Self {

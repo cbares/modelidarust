@@ -20,12 +20,12 @@ pub use f411::{QeiLeft, QeiRight};
 
 use defmt::info;
 use embassy_stm32::Peri;
-use embassy_stm32::gpio::{Input, Level, Output, OutputType, Speed};
+use embassy_stm32::gpio::{Input, Level, Output, OutputType, Pull, Speed};
 use embassy_stm32::mode::Async;
 use embassy_stm32::peripherals::{IWDG, PA8, PA9, PA10, PA11, PB3, PC4, TIM1};
 use embassy_stm32::time::khz;
 use embassy_stm32::timer::simple_pwm::{PwmPin, SimplePwm, SimplePwmChannel};
-use embassy_stm32::usart::{Uart, UartRx};
+use embassy_stm32::usart::{Config as UartConfig, DataBits, Parity, StopBits, Uart, UartRx};
 use motor_driver_hal::{MotorDriverBuilder, MotorDriverWrapper};
 
 pub type MotorDriverType = MotorDriverWrapper<
@@ -53,6 +53,24 @@ impl Default for Board {
     fn default() -> Self {
         Self::new()
     }
+}
+
+/// Liaison SBUS : 100 000 bauds, 8 bits, parité paire, 2 bits de stop, pull-up sur RX.
+///
+/// Le SBUS est un signal inversé. Les USART du F4 n'ont pas de bit RXINV
+/// (`invert_rx` n'existe que sur F7, L4, G4, H7...) : il faut ré-inverser en amont,
+/// par un transistor ou la sortie « SBUS non inversé » du récepteur.
+fn sbus_config() -> UartConfig {
+    let mut config = UartConfig::default();
+    config.baudrate = 100_000;
+    config.data_bits = DataBits::DataBits8;
+    config.parity = Parity::ParityEven;
+    config.stop_bits = StopBits::STOP2;
+    // Ligne au repos (haut) si le récepteur est débranché : pas de faux octets.
+    config.rx_pull = Pull::Up;
+    // Un overrun antérieur au démarrage de la lecture n'est pas une erreur.
+    config.detect_previous_overrun = false;
+    config
 }
 
 /// Moteurs sur TIM1 (PA8..PA11, 20 kHz) avec enables PC4 / PB3 :

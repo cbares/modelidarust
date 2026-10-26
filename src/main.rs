@@ -13,6 +13,7 @@ use modelidar::tasks::uart_usb::uart_task;
 use modelidar::tasks::odometry::odometry_task;
 use modelidar::tasks::watchdog::watchdog_task;
 use modelidar::tasks::motors::motors_task;
+use modelidar::tasks::sbus::sbus_task;
 
 
 #[embassy_executor::main]
@@ -36,6 +37,9 @@ use modelidar::tasks::motors::motors_task;
 
     // Spawn the motors task
     spawner.spawn(motors_task(board.motor_left, board.motor_right, board.max_duty).unwrap());
+
+    // Spawn the RC receiver task (SBUS), which can take over from USB
+    spawner.spawn(sbus_task(board.sbus).unwrap());
 
     let main_loop_duration = Duration::from_secs(10);
     let mut ticker = Ticker::every(main_loop_duration);

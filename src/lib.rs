@@ -8,4 +8,5 @@ pub mod tasks{
     pub mod uart_usb;
     pub mod watchdog;
     pub mod motors;
+    pub mod sbus;
 }
