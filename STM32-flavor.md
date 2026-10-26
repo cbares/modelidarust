@@ -97,6 +97,32 @@ TIM1, Ch3N for **PB1**, PB15
 TIM1, Ch4 for **PA11**
 
 
+## Nucleo64-L476RG
+
+- <https://www.st.com/en/evaluation-tools/nucleo-l476rg.html>
+- Flash : 1 MB
+- RAM : 128 KB
+- MCU : STM32L476RG
+- Core : ARM Cortex-M4F
+- Freq : 80 MHz
+
+Brochage utilisé par le firmware (`src/board/l476.rs`), différences avec la F446 en gras :
+
+| Fonction         | Broches                                  | Remarque                                    |
+|------------------|------------------------------------------|---------------------------------------------|
+| PWM moteurs TIM1 | PA8, PA9, PA10, PA11 (enables PC4 / PB3) | identique                                   |
+| Encodeur gauche  | **TIM3 : PB4 (CN10-27) / PB5 (CN10-29)** | PB8/PB9 ne sont pas des voies QEI sur L476  |
+| Encodeur droit   | TIM5 : PA0 / PA1                         | identique                                   |
+| USART2 (VCP)     | PA2 / PA3                                | identique                                   |
+| SBUS             | UART5 RX : PD2                           | **inversion par l'USART, pas d'inverseur**  |
+| Horloge          | **HSI16 → 80 MHz**, TIM1 à 80 MHz        | max duty PWM = 4000 à 20 kHz                |
+
+Compilation / flash :
+
+```sh
+PROBE_RS_CHIP=STM32L476RG cargo run --no-default-features --features stm32l476rg
+```
+
 ## Nucleo64-F410RB
 
 - <https://www.st.com/en/evaluation-tools/nucleo-f410rb.html>

@@ -1,12 +1,16 @@
 //! Configuration matérielle. Une seule carte est compilée, choisie par feature :
-//! `stm32f446re` (par défaut) ou `stm32f411re`.
+//! `stm32f446re` (par défaut), `stm32f411re` ou `stm32l476rg`.
 //!
 //! Chaque module de carte fournit `QeiLeft`, `QeiRight` et `Board::new()`.
 
-#[cfg(all(feature = "stm32f446re", feature = "stm32f411re"))]
-compile_error!("Activer une seule carte : `stm32f446re` ou `stm32f411re`.");
-#[cfg(not(any(feature = "stm32f446re", feature = "stm32f411re")))]
-compile_error!("Aucune carte activée : utiliser la feature `stm32f446re` ou `stm32f411re`.");
+#[cfg(any(
+    all(feature = "stm32f446re", feature = "stm32f411re"),
+    all(feature = "stm32f446re", feature = "stm32l476rg"),
+    all(feature = "stm32f411re", feature = "stm32l476rg"),
+))]
+compile_error!("Activer une seule carte : `stm32f446re`, `stm32f411re` ou `stm32l476rg`.");
+#[cfg(not(any(feature = "stm32f446re", feature = "stm32f411re", feature = "stm32l476rg")))]
+compile_error!("Aucune carte activée : utiliser `stm32f446re`, `stm32f411re` ou `stm32l476rg`.");
 
 #[cfg(feature = "stm32f446re")]
 mod f446;
@@ -17,6 +21,11 @@ pub use f446::{QeiLeft, QeiRight};
 mod f411;
 #[cfg(feature = "stm32f411re")]
 pub use f411::{QeiLeft, QeiRight};
+
+#[cfg(feature = "stm32l476rg")]
+mod l476;
+#[cfg(feature = "stm32l476rg")]
+pub use l476::{QeiLeft, QeiRight};
 
 use defmt::info;
 use embassy_stm32::Peri;
@@ -58,8 +67,9 @@ impl Default for Board {
 /// Liaison SBUS : 100 000 bauds, 8 bits, parité paire, 2 bits de stop, pull-up sur RX.
 ///
 /// Le SBUS est un signal inversé. Les USART du F4 n'ont pas de bit RXINV
-/// (`invert_rx` n'existe que sur F7, L4, G4, H7...) : il faut ré-inverser en amont,
-/// par un transistor ou la sortie « SBUS non inversé » du récepteur.
+/// (`invert_rx` n'existe que sur F7, L4, G4, H7...) : sur F4, il faut ré-inverser
+/// en amont, par un transistor ou la sortie « SBUS non inversé » du récepteur.
+/// La carte L476 active `invert_rx` elle-même.
 fn sbus_config() -> UartConfig {
     let mut config = UartConfig::default();
     config.baudrate = 100_000;
