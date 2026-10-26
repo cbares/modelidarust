@@ -3,6 +3,7 @@ use embassy_time::{Ticker, Duration};
 
 use crate::board::{QeiLeft, QeiRight};
 use crate::state::{ODOM_STATE, OdomState, Odom};
+use crate::tasks::watchdog::{self, Task};
 
 /// Pas codeur par tour de roue, tels que comptés par le timer en mode QEI.
 pub const TICKS_PER_REV: f32 = 544.0;
@@ -21,6 +22,7 @@ pub async fn odometry_task(interval: Duration, qei_left: QeiLeft, qei_right: Qei
             odom_right: enc_right.read(),
         };
         ODOM_STATE.lock(|s| s.set(odom));
+        watchdog::feed(Task::Odometry);
         ticker.next().await;
     }
 }

@@ -9,6 +9,7 @@ use motor_driver_hal::MotorDriver;
 
 use crate::state::{ODOM_STATE, OdomState};
 use crate::tasks::odometry::TICKS_PER_REV;
+use crate::tasks::watchdog::{self, Task};
 use crate::{board::MotorDriverType, tasks::uart_usb::ZERO};
 
 // --- Sécurité ---
@@ -239,6 +240,7 @@ pub async fn motors_task(mut left: MotorDriverType, mut right: MotorDriverType, 
             }
         }
         MOTOR_STATE.lock(|s| s.set(status));
+        watchdog::feed(Task::Motors);
     }
 }
 

@@ -1,7 +1,9 @@
 #![no_std]
 #![no_main]
 
-use defmt::info;
+use core::fmt::Write;
+
+use defmt::{info, warn};
 use defmt_rtt as _;
 use panic_probe as _;
 
@@ -11,7 +13,7 @@ use embassy_executor::Spawner;
 use modelidar::board::Board;
 use modelidar::tasks::uart_usb::uart_task;
 use modelidar::tasks::odometry::odometry_task;
-use modelidar::tasks::watchdog::watchdog_task;
+use modelidar::tasks::watchdog::{ResetCause, reset_cause, watchdog_task};
 use modelidar::tasks::motors::motors_task;
 use modelidar::tasks::sbus::sbus_task;
 
@@ -21,12 +23,19 @@ use modelidar::tasks::sbus::sbus_task;
     let mut board = Board::new();
     let mut led = board.led;
   
-    info!("MCU started");
-    board.serial_usb.write(b"MCU started\r\n").await.unwrap();
-    
-    // Spawn the watchdog task with a 10ms timeout
-    let watchdog_timeout_us = 10_000;
-    spawner.spawn(watchdog_task(board.iwdg, watchdog_timeout_us).unwrap());
+    // Cause du redémarrage, aussi envoyée au PC (ligne hors protocole).
+    let cause = reset_cause();
+    if cause == ResetCause::Watchdog {
+        warn!("MCU started after a watchdog reset: a task was stuck");
+    } else {
+        info!("MCU started (reset: {})", cause);
+    }
+    let mut msg: heapless::String<48> = heapless::String::new();
+    let _ = write!(msg, "MCU started (reset: {})\r\n", cause.tag());
+    board.serial_usb.write(msg.as_bytes()).await.unwrap();
+
+    // Watchdog : redémarre la carte si une tâche surveillée se bloque
+    spawner.spawn(watchdog_task(board.iwdg).unwrap());
     
     // Spawn the UART communication task
     spawner.spawn(uart_task(board.serial_usb).unwrap());

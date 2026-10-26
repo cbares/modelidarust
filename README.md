@@ -105,7 +105,11 @@ Réglables en tête de [`src/tasks/motors.rs`](src/tasks/motors.rs) :
   arrêt (`F:STALL`). Les moteurs restent arrêtés jusqu'à une consigne neutre (`/`, `*`,
   `#0500,0500` ou manches au centre). `STALL_DETECTION = false` désactive la
   détection, pour un essai sans codeurs.
-- **Watchdog** matériel (IWDG) de 10 ms.
+- **Watchdog** matériel (IWDG, 1 s) qui surveille les tâches moteurs, odométrie et
+  SBUS : si l'une d'elles ne tourne plus, la carte redémarre. Au démarrage, la carte
+  envoie la cause du dernier reset sur la liaison série, par exemple
+  `MCU started (reset: watchdog)`. Le watchdog est gelé quand un débogueur arrête le
+  processeur (point d'arrêt, pas à pas).
 
 ## Télécommande en terminal
 
@@ -147,7 +151,7 @@ src/
     └── watchdog.rs
 tools/teleop/          télécommande en terminal (PC)
 pinouts/  wires/       schémas
-doc/                   datasheets et photos
+doc/                   liens vers les datasheets, photos, schéma Fritzing
 ```
 
 ## Licence
@@ -161,5 +165,5 @@ Sauf mention contraire explicite, toute contribution soumise pour inclusion dans
 projet, au sens de la licence Apache-2.0, est distribuée sous cette double licence,
 sans condition supplémentaire.
 
-Les datasheets et pages constructeur de [`doc/`](doc/) restent la propriété de leurs
-auteurs respectifs et ne sont pas couvertes par ces licences.
+Les datasheets ne sont pas incluses : [`doc/README.md`](doc/README.md) donne les liens
+vers les documents officiels.

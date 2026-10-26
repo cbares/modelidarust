@@ -14,6 +14,7 @@ use static_cell::StaticCell;
 
 use crate::tasks::motors::{MotorCommand, RC_EVENT, RcEvent};
 use crate::tasks::uart_usb::ZERO;
+use crate::tasks::watchdog::{self, Task};
 
 // --- Affectation des voies (index 0 = CH1), à adapter à l'émetteur ---
 /// CH1 : manche droit horizontal (direction).
@@ -158,6 +159,8 @@ pub async fn sbus_task(rx: UartRx<'static, Async>) {
     let mut frames_lost: u32 = 0;
 
     loop {
+        // La lecture expire au bout de LINK_TIMEOUT : la boucle tourne même sans radio.
+        watchdog::feed(Task::Sbus);
         match with_timeout(LINK_TIMEOUT, rx.read(&mut chunk)).await {
             Ok(Ok(n)) => {
                 for &b in &chunk[..n] {
