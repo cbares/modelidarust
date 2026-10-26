@@ -84,7 +84,10 @@ fn sbus_config() -> UartConfig {
 }
 
 /// Moteurs sur TIM1 (PA8..PA11, 20 kHz) avec enables PC4 / PB3 :
-/// brochage identique sur F446 et F411.
+/// brochage identique sur toutes les cartes.
+///
+/// Sur le robot, la voie A du driver est la roue droite et la voie B la roue gauche
+/// (vérifié en essai : avec l'affectation inverse, le robot tournait à l'envers).
 #[allow(clippy::too_many_arguments)]
 fn init_motors(
     tim: Peri<'static, TIM1>,
@@ -118,19 +121,20 @@ fn init_motors(
     let max_duty = u16::try_from(in1a.max_duty_cycle()).expect("PWM max duty > u16");
     info!("PWM max duty: {}, frequency: {}", max_duty, in1a.get_frequency());
 
-    let en_l = Output::new(pc4, Level::Low, Speed::Low);
-    let en_r = Output::new(pb3, Level::Low, Speed::Low);
+    let en_a = Output::new(pc4, Level::Low, Speed::Low); // ENA
+    let en_b = Output::new(pb3, Level::Low, Speed::Low); // ENB
 
+    // Voie B : roue gauche. Entrées croisées, le moteur est monté en miroir.
     let left = MotorDriverBuilder::new()
-        .with_single_enable(en_l)
-        .with_dual_pwm(in1a, in2a)
+        .with_single_enable(en_b)
+        .with_dual_pwm(in2b, in1b)
         .with_max_duty(max_duty)
         .build_and_init()
         .expect("Left Driver Motor problem");
-    // Voies B inversées : le moteur droit est monté en miroir.
+    // Voie A : roue droite.
     let right = MotorDriverBuilder::new()
-        .with_single_enable(en_r)
-        .with_dual_pwm(in2b, in1b)
+        .with_single_enable(en_a)
+        .with_dual_pwm(in1a, in2a)
         .with_max_duty(max_duty)
         .build_and_init()
         .expect("Right Driver Motor problem");

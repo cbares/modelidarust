@@ -122,7 +122,8 @@ cargo run --release                          # premier /dev/ttyACM*
 cargo run --release -- --port /dev/ttyACM1
 ```
 
-Flèches : avancer, reculer, tourner. Espace : neutre. `s` : roue libre. `b` : freinage.
+Flèches : avancer, reculer, tourner. Espace : neutre. `s` ou `/` : roue libre.
+`b` ou `*` : freinage.
 `q` : quitter (envoie un arrêt).
 
 ## Schémas

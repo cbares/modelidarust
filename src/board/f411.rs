@@ -1,7 +1,7 @@
 //! Nucleo-64 STM32F411RE (carte MB1136), 100 MHz.
 //!
 //! Différences de brochage avec la F446 :
-//! - encodeur gauche sur TIM3 PB4 / PB5 (PB8 / PB9 ne sont pas des voies 1-2 de timer sur F411) ;
+//! - encodeur droit sur TIM3 PB4 / PB5 (PB8 / PB9 ne sont pas des voies 1-2 de timer sur F411) ;
 //! - SBUS sur USART6 RX (PC7), la F411 n'a pas d'UART5.
 
 use defmt::info;
@@ -14,10 +14,10 @@ use embassy_stm32::{bind_interrupts, dma, peripherals};
 
 use super::{Board, init_motors, sbus_config};
 
-/// Encodeur gauche : TIM3 sur PB4 / PB5 (CN10-27 / CN10-29).
-pub type QeiLeft = Qei<'static, TIM3>;
-/// Encodeur droit : TIM5 sur PA0 / PA1.
-pub type QeiRight = Qei<'static, TIM5>;
+/// Encodeur gauche : TIM5 sur PA0 / PA1.
+pub type QeiLeft = Qei<'static, TIM5>;
+/// Encodeur droit : TIM3 sur PB4 / PB5 (CN10-27 / CN10-29).
+pub type QeiRight = Qei<'static, TIM3>;
 
 bind_interrupts!(
     struct Irqs {
@@ -71,8 +71,8 @@ impl Board {
         .expect("USART2 unavailable");
 
         // === Encodeurs ===
-        let qei_left = Qei::new(p.TIM3, p.PB4, p.PB5, QeiConfig::default());
-        let qei_right = Qei::new(p.TIM5, p.PA0, p.PA1, QeiConfig::default());
+        let qei_left = Qei::new(p.TIM5, p.PA0, p.PA1, QeiConfig::default());
+        let qei_right = Qei::new(p.TIM3, p.PB4, p.PB5, QeiConfig::default());
 
         // === Moteurs ===
         let (motor_left, motor_right, max_duty) =

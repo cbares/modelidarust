@@ -32,12 +32,12 @@ HEADER = {
 
 # Bornier de puissance, de haut en bas selon le schéma constructeur (à vérifier sur la carte).
 TERMINALS = [
-    ("A 1", "motor", [("Moteur gauche", "motor")]),
-    ("A 2", "motor", [("Moteur gauche", "motor")]),
+    ("A 1", "motor", [("Moteur droit", "motor")]),
+    ("A 2", "motor", [("Moteur droit", "motor")]),
     ("PWR+", "pwr", [("Batterie + 5…12 V", "pwr")]),
     ("PWR−", "gnd", [("Batterie −", "gnd")]),
-    ("B 1", "motor", [("Moteur droit", "motor")]),
-    ("B 2", "motor", [("Moteur droit", "motor")]),
+    ("B 1", "motor", [("Moteur gauche", "motor")]),
+    ("B 2", "motor", [("Moteur gauche", "motor")]),
 ]
 
 LEGEND = [
@@ -147,7 +147,7 @@ diagram.panel_02.add(
     TextBlock(
         "\n".join(
             [
-                "Voie A = moteur gauche, voie B = moteur droit. Fils : câble W1 de wires/driver.yml.",
+                "Voie A = moteur droit, voie B = moteur gauche. Fils : câble W1 de wires/driver.yml.",
                 "V+ sort la tension batterie : ne jamais la relier à la Nucleo. Entrées compatibles 3,3 V.",
                 "PWM : 20 kHz, rapport cyclique max 98 % selon le constructeur.",
                 "CT : 0,155 V/A, dépasse 3,3 V au-delà de 21 A (pont diviseur avant un ADC).",

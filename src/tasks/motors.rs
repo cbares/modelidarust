@@ -266,6 +266,7 @@ fn apply(left: &mut MotorDriverType, right: &mut MotorDriverType, cmd: MotorComm
             right.set_speed(duty(alpha_right, coef, limit)).unwrap();
             debug!("Motor speeds: alpha_l={}, alpha_r={}", alpha_left, alpha_right);
         }
+        // Roue libre : driver désactivé (EN bas), les quatre transistors sont ouverts.
         MotorCommand::Stop => {
             left.stop().unwrap();
             left.disable().unwrap();
@@ -273,11 +274,15 @@ fn apply(left: &mut MotorDriverType, right: &mut MotorDriverType, cmd: MotorComm
             right.disable().unwrap();
             debug!("Motors stopped");
         }
+        // Freinage : driver activé et deux entrées à 0, les deux transistors bas du pont
+        // court-circuitent le moteur. On n'utilise pas `brake()` de motor-driver-hal, qui
+        // met les deux entrées à 100 % : sur le DBH (IR2104), les transistors hauts ne
+        // tiennent pas un rapport cyclique de 100 % et le freinage lâche.
         MotorCommand::Brake => {
+            left.stop().unwrap();
+            right.stop().unwrap();
             left.enable().unwrap();
             right.enable().unwrap();
-            left.brake().unwrap();
-            right.brake().unwrap();
             debug!("Motors braking");
         }
     }

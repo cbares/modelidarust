@@ -6,8 +6,8 @@ diagram = build(
     "MB1136",
     {
         "PD2": [("UART5_RX", "rc"), ("SBUS (inversé)", "rc")],
-        "PB8": [("TIM2_CH1", "encoder"), ("Codeur G · A", "encoder")],
-        "PB9": [("TIM2_CH2", "encoder"), ("Codeur G · B", "encoder")],
+        "PB8": [("TIM2_CH1", "encoder"), ("Codeur D · A", "encoder")],
+        "PB9": [("TIM2_CH2", "encoder"), ("Codeur D · B", "encoder")],
     },
     [
         "SBUS : 100 000 bauds 8E2, inverseur matériel obligatoire (pas de RXINV sur F4).",

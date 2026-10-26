@@ -37,11 +37,11 @@ Version alternative avec 4 canaux PWM:
     PA10     ------> TIM1_CH3
     PA11     ------> TIM1_CH4
 
-TIM2: left encoder, TIM_ENCODERMODE_TI12, No Pull,low speed, AF1
+TIM2: right encoder, TIM_ENCODERMODE_TI12, No Pull,low speed, AF1
     PB8     ------> TIM2_CH1
     PB9     ------> TIM2_CH2
 
-TIM5: right encoder, TIM_ENCODERMODE_TI12, No Pull, low speed, AF2
+TIM5: left encoder, TIM_ENCODERMODE_TI12, No Pull, low speed, AF2
     PA0-WKUP     ------> TIM5_CH1
     PA1     ------> TIM5_CH2
 
@@ -77,8 +77,8 @@ Brochage utilisé par le firmware (`src/board/f411.rs`), différences avec la F4
 | Fonction         | Broches                                  | Remarque                                  |
 |------------------|------------------------------------------|-------------------------------------------|
 | PWM moteurs TIM1 | PA8, PA9, PA10, PA11 (enables PC4 / PB3) | identique                                 |
-| Encodeur gauche  | **TIM3 : PB4 (CN10-27) / PB5 (CN10-29)** | PB8/PB9 ne sont pas des voies QEI sur F411 |
-| Encodeur droit   | TIM5 : PA0 / PA1                         | identique                                 |
+| Encodeur droit   | **TIM3 : PB4 (CN10-27) / PB5 (CN10-29)** | PB8/PB9 ne sont pas des voies QEI sur F411 |
+| Encodeur gauche  | TIM5 : PA0 / PA1                         | identique                                 |
 | USART2 (VCP)     | PA2 / PA3                                | identique                                 |
 | SBUS             | **USART6 RX : PC7 (CN10-19)**            | pas d'UART5 sur F411                      |
 | Horloge          | 100 MHz, TIM1 à 100 MHz                  | max duty PWM = 5000 à 20 kHz              |
@@ -118,8 +118,8 @@ Brochage utilisé par le firmware (`src/board/l476.rs`), différences avec la F4
 | Fonction         | Broches                                  | Remarque                                    |
 |------------------|------------------------------------------|---------------------------------------------|
 | PWM moteurs TIM1 | PA8, PA9, PA10, PA11 (enables PC4 / PB3) | identique                                   |
-| Encodeur gauche  | **TIM3 : PB4 (CN10-27) / PB5 (CN10-29)** | PB8/PB9 ne sont pas des voies QEI sur L476  |
-| Encodeur droit   | TIM5 : PA0 / PA1                         | identique                                   |
+| Encodeur droit   | **TIM3 : PB4 (CN10-27) / PB5 (CN10-29)** | PB8/PB9 ne sont pas des voies QEI sur L476  |
+| Encodeur gauche  | TIM5 : PA0 / PA1                         | identique                                   |
 | USART2 (VCP)     | PA2 / PA3                                | identique                                   |
 | SBUS             | UART5 RX : PD2                           | **inversion par l'USART, pas d'inverseur**  |
 | Horloge          | **HSI16 → 80 MHz**, TIM1 à 80 MHz        | max duty PWM = 4000 à 20 kHz                |

@@ -161,11 +161,11 @@ fn run(
                 KeyCode::Right => app.steer = (app.steer + STEP).min(ZERO),
                 KeyCode::Left => app.steer = (app.steer - STEP).max(-ZERO),
                 KeyCode::Char(' ') => (app.throttle, app.steer) = (0, 0),
-                KeyCode::Char('s') | KeyCode::Char('S') => {
+                KeyCode::Char('s') | KeyCode::Char('S') | KeyCode::Char('/') => {
                     (app.throttle, app.steer) = (0, 0);
                     frame = Some("/".to_string());
                 }
-                KeyCode::Char('b') | KeyCode::Char('B') => {
+                KeyCode::Char('b') | KeyCode::Char('B') | KeyCode::Char('*') => {
                     (app.throttle, app.steer) = (0, 0);
                     frame = Some("*".to_string());
                 }
@@ -306,8 +306,8 @@ fn draw(frame: &mut Frame, app: &App) {
             Line::from("↑ / ↓   avancer / reculer (±10 %)"),
             Line::from("← / →   tourner (±10 %)"),
             Line::from("espace  consigne neutre (réarme après un blocage)"),
-            Line::from("s       arrêt roue libre (/)"),
-            Line::from("b       freinage (*)"),
+            Line::from("s ou /  arrêt roue libre"),
+            Line::from("b ou *  freinage"),
             Line::from("q       quitter (envoie un arrêt)"),
         ])
         .block(Block::new().title("Touches".underlined())),

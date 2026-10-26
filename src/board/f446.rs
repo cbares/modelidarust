@@ -10,10 +10,10 @@ use embassy_stm32::{bind_interrupts, dma, exti, i2c, interrupt, peripherals};
 
 use super::{Board, init_motors, sbus_config};
 
-/// Encodeur gauche : TIM2 sur PB8 / PB9.
-pub type QeiLeft = Qei<'static, TIM2>;
-/// Encodeur droit : TIM5 sur PA0 / PA1.
-pub type QeiRight = Qei<'static, TIM5>;
+/// Encodeur gauche : TIM5 sur PA0 / PA1.
+pub type QeiLeft = Qei<'static, TIM5>;
+/// Encodeur droit : TIM2 sur PB8 / PB9.
+pub type QeiRight = Qei<'static, TIM2>;
 
 bind_interrupts!(
     struct Irqs {
@@ -75,8 +75,8 @@ impl Board {
         // let i2c = I2c::new(p.I2C2, p.PB10, p.PC12, p.DMA1_CH7, p.DMA1_CH2, Irqs, I2cConfig::default());
         
         // === Encodeurs ===
-        let qei_left = Qei::new(p.TIM2, p.PB8, p.PB9, QeiConfig::default());
-        let qei_right = Qei::new(p.TIM5, p.PA0, p.PA1, QeiConfig::default());
+        let qei_left = Qei::new(p.TIM5, p.PA0, p.PA1, QeiConfig::default());
+        let qei_right = Qei::new(p.TIM2, p.PB8, p.PB9, QeiConfig::default());
 
         // === Moteurs ===
         let (motor_left, motor_right, max_duty) =
