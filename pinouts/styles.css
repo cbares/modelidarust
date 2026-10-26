@@ -59,3 +59,31 @@ text {
 /* Légende */
 .legend__bg { fill: none; }
 .legendentry text { dominant-baseline: central; fill: #222; }
+
+/* Driver moteurs */
+.driver-outline { fill: #1f3f8f; stroke: #142a60; stroke-width: 2; }
+.driver-title { font-size: 15px; font-weight: bold; text-anchor: middle; fill: #ffffff; }
+.driver-ref { font-size: 12px; font-style: italic; text-anchor: middle; fill: #c9d4f0; }
+.driver-row { font-size: 12px; font-weight: bold; text-anchor: middle; fill: #ffffff; }
+.terminal-block { fill: #3c9a4b; }
+.screw { fill: #d9d9d9; stroke: #666; stroke-width: 1; }
+
+.sense .pinlabel__body, .sense .swatch__body { fill: #16a085; }
+.sense .pinlabel__leader { stroke: #16a085; }
+
+.nc .pinlabel__body, .nc .swatch__body { fill: #bdbdbd; }
+.nc .pinlabel__leader { stroke: #bdbdbd; }
+
+/* Couleurs de fils (DIN 47100) */
+.wire-gy .pinlabel__body { fill: #8c8c8c; }
+.wire-vt .pinlabel__body { fill: #7d3c98; }
+.wire-bu .pinlabel__body { fill: #1f5fbf; }
+.wire-gn .pinlabel__body { fill: #2e8b3a; }
+.wire-ye .pinlabel__body { fill: #f4d03f; }
+.wire-ye .pinlabel__text { fill: #222; }
+.wire-og .pinlabel__body { fill: #e67e22; }
+.wire-rd .pinlabel__body { fill: #d62c1a; }
+.wire-bk .pinlabel__body { fill: #111; }
+.wire-gy .pinlabel__leader, .wire-vt .pinlabel__leader, .wire-bu .pinlabel__leader,
+.wire-gn .pinlabel__leader, .wire-ye .pinlabel__leader, .wire-og .pinlabel__leader,
+.wire-rd .pinlabel__leader, .wire-bk .pinlabel__leader { stroke: #888; }

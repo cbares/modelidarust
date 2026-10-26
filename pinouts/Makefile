@@ -3,7 +3,7 @@
 # sans installation globale. Sinon : make PINOUT="python -m pinout.manager"
 
 PINOUT ?= uv run -q --no-project --with pinout --with cairosvg python -m pinout.manager
-BOARDS := f446 f411 l476
+BOARDS := f446 f411 l476 driver
 DEPS := nucleo64.py styles.css
 
 all: $(BOARDS:=.svg) $(BOARDS:=.png)

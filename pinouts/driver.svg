@@ -1,0 +1,4069 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1184" 
+    height="478" 
+    viewBox="0 0 1184 478"
+    class="diagram layout"
+>
+
+<defs>
+    
+</defs>
+
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    /* Styles des schémas de brochage (pinout) */
+
+text {
+    font-family: "DejaVu Sans", Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* Fond des panneaux */
+.panel__outer { fill: #ffffff; stroke: none; }
+.panel__inner { fill: #ffffff; stroke: none; }
+.panel--info .panel__inner { fill: #f7f7f7; }
+
+.h1 { font-size: 22px; font-weight: bold; fill: #222; }
+.text_block { fill: #333; }
+
+/* Carte */
+.board-outline { fill: #f4f4f1; stroke: #9a9a92; stroke-width: 2; }
+.header { fill: #2b2b2b; }
+.pad { fill: #c9a227; }
+.board-ref { font-size: 12px; text-anchor: middle; fill: #777; font-style: italic; }
+.connector-name { font-size: 15px; font-weight: bold; text-anchor: middle; fill: #222; }
+.pin-number { font-size: 10px; text-anchor: middle; fill: #666; }
+
+/* Étiquettes */
+.pinlabel__leader { stroke-width: 2; fill: none; }
+.pinlabel__text {
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pin .pinlabel__body, .pin .swatch__body { fill: #4a4a4a; }
+.pin .pinlabel__leader { stroke: #4a4a4a; }
+
+.motor .pinlabel__body, .motor .swatch__body { fill: #c0392b; }
+.motor .pinlabel__leader { stroke: #c0392b; }
+
+.encoder .pinlabel__body, .encoder .swatch__body { fill: #2471a3; }
+.encoder .pinlabel__leader { stroke: #2471a3; }
+
+.rc .pinlabel__body, .rc .swatch__body { fill: #8e44ad; }
+.rc .pinlabel__leader { stroke: #8e44ad; }
+
+.uart .pinlabel__body, .uart .swatch__body { fill: #1e8449; }
+.uart .pinlabel__leader { stroke: #1e8449; }
+
+.board .pinlabel__body, .board .swatch__body { fill: #b9770e; }
+.board .pinlabel__leader { stroke: #b9770e; }
+
+.pwr .pinlabel__body, .pwr .swatch__body { fill: #e67e22; }
+.pwr .pinlabel__leader { stroke: #e67e22; }
+
+.gnd .pinlabel__body, .gnd .swatch__body { fill: #000000; }
+.gnd .pinlabel__leader { stroke: #000000; }
+
+/* Légende */
+.legend__bg { fill: none; }
+.legendentry text { dominant-baseline: central; fill: #222; }
+
+/* Driver moteurs */
+.driver-outline { fill: #1f3f8f; stroke: #142a60; stroke-width: 2; }
+.driver-title { font-size: 15px; font-weight: bold; text-anchor: middle; fill: #ffffff; }
+.driver-ref { font-size: 12px; font-style: italic; text-anchor: middle; fill: #c9d4f0; }
+.driver-row { font-size: 12px; font-weight: bold; text-anchor: middle; fill: #ffffff; }
+.terminal-block { fill: #3c9a4b; }
+.screw { fill: #d9d9d9; stroke: #666; stroke-width: 1; }
+
+.sense .pinlabel__body, .sense .swatch__body { fill: #16a085; }
+.sense .pinlabel__leader { stroke: #16a085; }
+
+.nc .pinlabel__body, .nc .swatch__body { fill: #bdbdbd; }
+.nc .pinlabel__leader { stroke: #bdbdbd; }
+
+/* Couleurs de fils (DIN 47100) */
+.wire-gy .pinlabel__body { fill: #8c8c8c; }
+.wire-vt .pinlabel__body { fill: #7d3c98; }
+.wire-bu .pinlabel__body { fill: #1f5fbf; }
+.wire-gn .pinlabel__body { fill: #2e8b3a; }
+.wire-ye .pinlabel__body { fill: #f4d03f; }
+.wire-ye .pinlabel__text { fill: #222; }
+.wire-og .pinlabel__body { fill: #e67e22; }
+.wire-rd .pinlabel__body { fill: #d62c1a; }
+.wire-bk .pinlabel__body { fill: #111; }
+.wire-gy .pinlabel__leader, .wire-vt .pinlabel__leader, .wire-bu .pinlabel__leader,
+.wire-gn .pinlabel__leader, .wire-ye .pinlabel__leader, .wire-og .pinlabel__leader,
+.wire-rd .pinlabel__leader, .wire-bk .pinlabel__leader { stroke: #888; }
+
+    ]]>  
+</style>
+<g 
+        class="panel"
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_328"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_363"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1184" 
+    height="478" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_362"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1180" 
+    height="474" 
+/><g 
+        class="panel--main panel"
+transform="
+    translate(0.5 0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_330"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_365"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1180" 
+    height="328" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_364"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1179.0" 
+    height="327.0" 
+/><g 
+transform="
+    translate(0 12) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_1"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="driver-outline"
+transform="
+    translate(370 28) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_2"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="582" 
+    height="262" 
+    rx="10" 
+    ry="10" 
+/><text
+
+        class="driver-ref"
+transform="
+    translate(661.0 280) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    DBH-12V · Dual DC Motor Drive
+</text><rect
+
+        class="header"
+transform="
+    translate(398 68) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_4"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="202" 
+    rx="2" 
+    ry="2" 
+/><text
+
+        class="driver-title"
+transform="
+    translate(424.0 40) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    logique
+</text><text
+
+        class="driver-row"
+transform="
+    translate(410 58) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_6"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    B
+</text><text
+
+        class="driver-row"
+transform="
+    translate(438 58) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_7"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A
+</text><rect
+
+        class="pad"
+transform="
+    translate(404 78) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_8"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(410 84) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_9"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_10"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pwr"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_11"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_368"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_366"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    V+
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_13"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel pwr"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_15"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_371"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_369"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    tension batterie
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_19"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel nc"
+transform="
+    translate(-214.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_20"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_374"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_372"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    non relié
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_24"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(432 78) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_25"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(438 84) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_26"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_27"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pwr"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_28"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_377"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_375"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    V+
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_30"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel pwr"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_32"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_380"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_378"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    tension batterie
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_36"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel nc"
+transform="
+    translate(214.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_37"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_383"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_381"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    non relié
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_41"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(404 112) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_42"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(410 118) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_43"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_44"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel gnd"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_45"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_386"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_384"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GND
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_47"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_49"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_389"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_387"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    fil W0
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_53"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(-214.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_54"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_392"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_390"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    masse
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_58"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-bk"
+transform="
+    translate(-316.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_59"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_395"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_393"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    noir
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_63"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(432 112) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_64"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(438 118) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_65"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_66"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel gnd"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_67"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_398"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_396"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GND
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_69"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_71"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_401"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_399"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10-20 · GND
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_75"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(214.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_76"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_404"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_402"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    masse
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_80"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-gy"
+transform="
+    translate(316.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_81"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_407"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_405"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    gris
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_85"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(404 146) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_86"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(410 152) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_87"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_88"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_89"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_410"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_408"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN1B
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_91"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_93"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_413"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_411"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10-33 · PA10
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_97"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-214.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_98"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_416"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_414"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH3
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_102"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-bu"
+transform="
+    translate(-316.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_103"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_419"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_417"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    bleu
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_107"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(432 146) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_108"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(438 152) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_109"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_110"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_111"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_422"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_420"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN1A
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_113"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_115"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_425"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_423"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10-23 · PA8
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_119"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(214.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_120"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_428"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_426"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH1
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_124"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-vt"
+transform="
+    translate(316.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_125"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_431"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_429"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    violet
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_129"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(404 180) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_130"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(410 186) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_131"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_132"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_133"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_434"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_432"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN2B
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_135"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_137"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_437"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_435"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10-14 · PA11
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_141"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-214.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_142"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_440"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_438"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH4
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_146"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-ye"
+transform="
+    translate(-316.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_147"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_443"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_441"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    jaune
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_151"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(432 180) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_152"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(438 186) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_153"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_154"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_155"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_446"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_444"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    IN2A
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_157"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_159"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_449"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_447"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10-21 · PA9
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_163"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(214.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_164"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_452"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_450"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TIM1_CH2
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_168"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-gn"
+transform="
+    translate(316.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_169"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_455"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_453"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    vert
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_173"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(404 214) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_174"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(410 220) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_175"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_176"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_177"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_458"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_456"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    ENB
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_179"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_181"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_461"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_459"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10-31 · PB3
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_185"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(-214.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_186"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_464"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_462"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    ENB (GPIO)
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_190"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-og"
+transform="
+    translate(-316.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_191"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_467"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_465"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    orange
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_195"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(432 214) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_196"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(438 220) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_197"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_198"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_199"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_470"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_468"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    ENA
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_201"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_203"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_473"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_471"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CN10-34 · PC4
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_207"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(214.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_208"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_476"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_474"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    ENA (GPIO)
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_212"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel wire-rd"
+transform="
+    translate(316.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_213"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_479"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="62" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(37.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_477"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    rouge
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_217"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(404 248) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_218"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(410 254) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_219"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_220"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel sense"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_221"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_482"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_480"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CTB
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_223"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel sense"
+transform="
+    translate(-84.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_225"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_485"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_483"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    0,155 V/A
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_229"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel nc"
+transform="
+    translate(-214.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_230"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_488"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_486"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    non relié
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_234"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="pad"
+transform="
+    translate(432 248) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_235"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="12" 
+    height="12" 
+/><g 
+transform="
+    translate(438 254) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_236"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_237"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel sense"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_238"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_491"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_489"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CTA
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_240"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel sense"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_242"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_494"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="124" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(68.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_492"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    0,155 V/A
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_246"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class=" pinlabel nc"
+transform="
+    translate(214.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_247"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_497"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="96" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(54.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_495"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    non relié
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_251"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="terminal-block"
+transform="
+    translate(898 68.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_252"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="28" 
+    height="202" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="driver-title"
+transform="
+    translate(912 40) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_253"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    bornier
+</text><rect
+
+        class="screw"
+transform="
+    translate(905 77.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_254"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="14" 
+    height="14" 
+    rx="7" 
+    ry="7" 
+/><g 
+transform="
+    translate(912 84.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_255"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_256"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_257"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_500"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_498"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A 1
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_259"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_261"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_503"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="150" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(81.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_501"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Moteur gauche
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_265"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="screw"
+transform="
+    translate(905 111.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_266"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="14" 
+    height="14" 
+    rx="7" 
+    ry="7" 
+/><g 
+transform="
+    translate(912 118.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_267"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_268"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_269"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_506"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_504"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A 2
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_271"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_273"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_509"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="150" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(81.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_507"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Moteur gauche
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_277"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="screw"
+transform="
+    translate(905 145.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_278"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="14" 
+    height="14" 
+    rx="7" 
+    ry="7" 
+/><g 
+transform="
+    translate(912 152.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_279"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_280"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel pwr"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_281"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_512"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_510"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PWR+
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_283"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel pwr"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_285"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_515"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="150" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(81.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_513"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Batterie + 5…12 V
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_289"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="screw"
+transform="
+    translate(905 179.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_290"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="14" 
+    height="14" 
+    rx="7" 
+    ry="7" 
+/><g 
+transform="
+    translate(912 186.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_291"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_292"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel gnd"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_293"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_518"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_516"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PWR−
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_295"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel gnd"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_297"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_521"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="150" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(81.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_519"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Batterie −
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_301"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="screw"
+transform="
+    translate(905 213.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_302"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="14" 
+    height="14" 
+    rx="7" 
+    ry="7" 
+/><g 
+transform="
+    translate(912 220.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_303"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_304"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_305"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_524"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_522"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    B 1
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_307"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_309"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_527"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="150" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(81.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_525"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Moteur droit
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_313"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><rect
+
+        class="screw"
+transform="
+    translate(905 247.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_314"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="14" 
+    height="14" 
+    rx="7" 
+    ry="7" 
+/><g 
+transform="
+    translate(912 254.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_315"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_316"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" pinlabel motor"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_317"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(32 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_530"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="52" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(58.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_528"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    B 2
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_319"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 4.0 0.0 C 16.0 0.0 16.0 0.0 28.0 0.0 L 32 0.0" 
+/>
+</g><g 
+        class=" pinlabel motor"
+transform="
+    translate(84.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_321"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" pinlabel__body"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_533"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="150" 
+    height="26" 
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text"
+transform="
+    translate(81.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_531"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Moteur droit
+</text><path 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_325"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel--info panel"
+transform="
+    translate(0.5 328.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_332"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_535"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1180" 
+    height="146" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_534"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1179.0" 
+    height="145.0" 
+/><g 
+        class="panel title_block textblock"
+transform="
+    translate(20 34) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_334"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_536"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    <tspan class='h1'>Driver DBH-12V (DBH-1A) · modelidar</tspan>
+</text>
+</g><g 
+        class="panel text_block textblock"
+transform="
+    translate(20 68) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_335"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_537"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Voie A = moteur gauche, voie B = moteur droit. Fils : câble W1 de wires/driver.yml.
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 20) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_538"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    V+ sort la tension batterie : ne jamais la relier à la Nucleo. Entrées compatibles 3,3 V.
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 40) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_539"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PWM : 20 kHz, rapport cyclique max 98 % selon le constructeur.
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 60) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_540"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    CT : 0,155 V/A, dépasse 3,3 V au-delà de 21 A (pont diviseur avant un ADC).
+</text>
+</g><g 
+        class=" legend"
+transform="
+    translate(826 14) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_336"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="motor legendentry"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_337"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_338"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_339"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_341"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Moteurs
+</text>
+</g><g 
+        class="gnd legendentry"
+transform="
+    translate(0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_342"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_343"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_344"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_346"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Masse
+</text>
+</g><g 
+        class="pwr legendentry"
+transform="
+    translate(0 56.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_347"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_348"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_349"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_351"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Batterie
+</text>
+</g><g 
+        class="sense legendentry"
+transform="
+    translate(159.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_352"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_353"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_354"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_356"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Mesure courant
+</text>
+</g><g 
+        class="nc legendentry"
+transform="
+    translate(159.0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_357"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class=" swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_358"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class=" swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_359"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="20" 
+    height="20" 
+/>
+</g><text
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3d954bf1-df87-4d96-8396-d465439f19ef_361"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Non relié
+</text>
+</g>
+</g>
+</g>
+</g>
+    
+</svg>
