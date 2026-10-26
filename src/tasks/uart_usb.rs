@@ -11,7 +11,7 @@ use crate::tasks::motors::{Fault, GAINS, MAX_SPEED, MOTOR_STATE, MotorCommand, O
 
 /// Longueur maximale des commandes à ligne (`V`, `K`), terminées par '\n' ou '\r'.
 const LINE_MAX: usize = 48;
-/// Délai maximal entre deux octets d'une commande à ligne.
+/// Délai maximal pour recevoir la suite d'une commande (`#`, `V`, `K`).
 const LINE_TIMEOUT: Duration = Duration::from_millis(50);
 
 const CMD_LENGTH: usize = 10; // "#AAAA,BBBB"
@@ -54,11 +54,14 @@ pub async fn uart_task(
             }
 
             b'#' => {
-                // Lire les CMD_LENGTH - 1 octets restants : "AAAA,BBBB"
+                // Lire les CMD_LENGTH - 1 octets restants : "AAAA,BBBB". Une trame
+                // incomplète est abandonnée au bout de LINE_TIMEOUT, au lieu de bloquer
+                // la liaison en avalant les trames suivantes.
                 let mut rest = [0u8; CMD_LENGTH];
                 rest[0] = header[0];
-                match <RingBufferedUartRx<'static> as embedded_io_async::Read>::read_exact(&mut serial_rx, &mut rest[1..]).await {
-                    Ok(_) => match parse_pattern(rest) {
+                let read = <RingBufferedUartRx<'static> as embedded_io_async::Read>::read_exact(&mut serial_rx, &mut rest[1..]);
+                match with_timeout(LINE_TIMEOUT, read).await {
+                    Ok(Ok(_)) => match parse_pattern(rest) {
                         Some((al, ar)) => {
                             let alpha_left = (al.clamp(0, STEPS) - ZERO) as i16;
                             let alpha_right = (ar.clamp(0, STEPS) - ZERO) as i16;
@@ -70,8 +73,12 @@ pub async fn uart_task(
                             continue;
                         }
                     },
+                    Ok(Err(_)) => {
+                        warn!("Failed to read command parameters");
+                        continue;
+                    }
                     Err(_) => {
-                        info!("Failed to read command parameters");
+                        warn!("Incomplete speed command: dropped after {} ms", LINE_TIMEOUT.as_millis());
                         continue;
                     }
                 }
@@ -130,9 +137,10 @@ pub async fn uart_task(
 }
 
 
-/// Parse "#AAAA,BBBB" → Some((a, b))
+/// Parse "#AAAA,BBBB" (chiffres uniquement) → Some((a, b))
 fn parse_pattern(buf: [u8; CMD_LENGTH]) -> Option<(i32, i32)> {
-    if buf[5] != b',' {
+    let digits = |s: &[u8]| s.iter().all(u8::is_ascii_digit);
+    if buf[5] != b',' || !digits(&buf[1..5]) || !digits(&buf[6..10]) {
         return None;
     }
     let p1 = String::<4>::from_utf8(
