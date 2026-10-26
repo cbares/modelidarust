@@ -62,6 +62,9 @@ USART2, relié au port série USB du ST-Link (`/dev/ttyACM0`), 115 200 bauds 8N1
 | `#AAAA,BBBB` | consigne gauche, droite sur 4 chiffres, de `0000` à `1000`, `0500` = arrêt |
 | `/`          | arrêt en roue libre                                                |
 | `*`          | freinage                                                           |
+| `V<g>,<d>`   | vitesse des roues en mrad/s, régulée par la carte, terminée par `\n` (ex. `V3142,-1571`) |
+| `K`          | lit les gains de régulation, terminée par `\n`                     |
+| `K<kp>,<ki>,<kff>,<dmin>` | change les gains, terminée par `\n` (perdus au redémarrage) |
 
 Chaque trame reçoit une réponse :
 
@@ -71,13 +74,52 @@ Chaque trame reçoit une réponse :
 
 | Champ        | Signification                                                     |
 |--------------|-------------------------------------------------------------------|
-| `!AAAA,BBBB` | consigne réellement appliquée aux moteurs                         |
+| `!AAAA,BBBB` | rapport cyclique réellement appliqué aux moteurs (aussi en mode vitesse) |
 | `L:` / `R:`  | roue gauche / droite : vitesse (pas/s), position cumulée (pas)    |
 | `C:`         | qui pilote : `USB`, `RC` (radiocommande) ou `LOST` (radio perdue) |
 | `F:`         | défaut : `-`, `USB_TIMEOUT` ou `STALL`                            |
 
+`K` reçoit en plus une ligne `K:kp,ki,kff,dmin`.
+
 Pendant que les moteurs tournent, le PC doit envoyer une trame au moins toutes les
 500 ms (un `?` suffit), sinon la carte arrête les moteurs.
+
+## Régulation de vitesse
+
+En mode vitesse (`V`), la carte régule chaque roue à 100 Hz
+([`src/control.rs`](src/control.rs)) :
+
+```text
+PWM = kff × consigne + dmin × signe(consigne) + kp × erreur + ki × ∫erreur
+```
+
+- `kff` : PWM par rad/s, environ 1 / (vitesse à vide à 100 %) ;
+- `dmin` : PWM minimal pour décoller du frottement ;
+- `kp`, `ki` : correction de l'écart entre consigne et vitesse mesurée.
+
+La vitesse est mesurée sur 50 ms, et jusqu'à 200 ms à basse allure pour compter au
+moins 3 pas codeur. Le terme intégral porte sur l'écart de position (pas réellement
+parcourus contre consigne intégrée), insensible au bruit de mesure de la vitesse. Il ne
+s'emballe pas quand le PWM est en butée, et repart de zéro à chaque arrêt.
+
+Réglage, robot sur cales, avec la télécommande (touche `v` pour le mode vitesse,
+`:` pour saisir une commande) :
+
+1. **kff** : en mode PWM, envoyer `#0900,0900` (80 %) et lire la vitesse des roues en
+   tr/s. `kff = 0.8 / (tr/s × 6.283)`.
+2. **dmin** : en mode PWM, monter par appuis de 10 % depuis l'arrêt et noter le PWM
+   où les deux roues partent toujours. `dmin` = ce PWM moins 0,05.
+3. **kp, ki** : en mode vitesse, demander 0,1 puis 1 tr/s. Si la vitesse oscille,
+   baisser `kp`. Si elle met du temps à rejoindre la consigne, augmenter `ki`.
+
+**Mouvement saccadé à basse vitesse** (la roue s'arrête et repart) : c'est presque
+toujours `kp` trop fort, qui amplifie le bruit de mesure. Revenir à `kp 0.02` à `0.05`
+et `ki` ≤ 1. Ensuite, régler `dmin` sur le PWM où une roue *qui tourne déjà* s'arrête
+quand on baisse le PWM : c'est le frottement en mouvement, plus bas que le seuil de
+démarrage.
+
+Les valeurs par défaut (`kp 0.05, ki 0.5, kff 0.05, dmin 0.2`) sont dans
+[`src/control.rs`](src/control.rs) : y reporter les valeurs trouvées pour les garder.
 
 ## Radiocommande
 
@@ -101,9 +143,10 @@ Réglables en tête de [`src/tasks/motors.rs`](src/tasks/motors.rs) :
 - **PWM plafonné à 98 %**, limite du driver DBH-1A.
 - **PC muet** : sans trame USB pendant 500 ms alors que les moteurs tournent, arrêt
   (`F:USB_TIMEOUT`).
-- **Roue bloquée** : consigne d'au moins 30 % et roue sous 0,1 tour/s pendant 300 ms,
-  arrêt (`F:STALL`). Les moteurs restent arrêtés jusqu'à une consigne neutre (`/`, `*`,
-  `#0500,0500` ou manches au centre). `STALL_DETECTION = false` désactive la
+- **Roue bloquée** : roue sous 0,1 tour/s pendant 300 ms alors qu'elle reçoit au moins
+  30 % de PWM (mode PWM) ou que la régulation est en butée (mode vitesse) : arrêt
+  (`F:STALL`). Les moteurs restent arrêtés jusqu'à une consigne neutre (`/`, `*`,
+  `#0500,0500`, `V0,0` ou manches au centre). `STALL_DETECTION = false` désactive la
   détection, pour un essai sans codeurs.
 - **Watchdog** matériel (IWDG, 1 s) qui surveille les tâches moteurs, odométrie et
   SBUS : si l'une d'elles ne tourne plus, la carte redémarre. Au démarrage, la carte
@@ -122,9 +165,10 @@ cargo run --release                          # premier /dev/ttyACM*
 cargo run --release -- --port /dev/ttyACM1
 ```
 
-Flèches : avancer, reculer, tourner. Espace : neutre. `s` ou `/` : roue libre.
-`b` ou `*` : freinage.
-`q` : quitter (envoie un arrêt).
+Flèches : avancer, reculer, tourner (par 10 % en mode PWM, par 0,1 tr/s en mode
+vitesse). `v` : passer du mode PWM au mode vitesse. Espace : neutre. `s` ou `/` : roue
+libre. `b` ou `*` : freinage. `:` : saisir une commande libre, par exemple des gains
+(`K0.05,0.5,0.05,0.2`). `q` : quitter (envoie un arrêt).
 
 ## Schémas
 
@@ -143,9 +187,10 @@ src/
 │   ├── f446.rs
 │   ├── f411.rs
 │   └── l476.rs
+├── control.rs         régulateur de vitesse d'une roue (sans matériel)
 ├── state.rs           odométrie partagée
 └── tasks/
-    ├── motors.rs      arbitrage USB / radio, sécurités, commande des moteurs
+    ├── motors.rs      arbitrage USB / radio, sécurités, régulation, commande des moteurs
     ├── odometry.rs    lecture des codeurs
     ├── uart_usb.rs    protocole série
     ├── sbus.rs        récepteur de radiocommande

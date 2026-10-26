@@ -1,11 +1,18 @@
-use defmt::{debug, info};
+use defmt::{debug, info, warn};
 use embassy_stm32::usart::{RingBufferedUartRx, Uart, UartTx};
 use embassy_stm32::mode::Async;
+use embassy_time::{Duration, with_timeout};
 use heapless::{String, format, Vec};
 use static_cell::StaticCell;
 
+use crate::control::Gains;
 use crate::state::ODOM_STATE;
-use crate::tasks::motors::{Fault, MOTOR_STATE, MotorCommand, Owner, USB_ALIVE, USB_CMD};
+use crate::tasks::motors::{Fault, GAINS, MAX_SPEED, MOTOR_STATE, MotorCommand, Owner, USB_ALIVE, USB_CMD};
+
+/// Longueur maximale des commandes à ligne (`V`, `K`), terminées par '\n' ou '\r'.
+const LINE_MAX: usize = 48;
+/// Délai maximal entre deux octets d'une commande à ligne.
+const LINE_TIMEOUT: Duration = Duration::from_millis(50);
 
 const CMD_LENGTH: usize = 10; // "#AAAA,BBBB"
 const STEPS: i32 = 1000;
@@ -70,6 +77,44 @@ pub async fn uart_task(
                 }
             }
 
+            // Consigne de vitesse : "V<gauche>,<droite>\n" en mrad/s, ex. "V3142,-1571".
+            b'V' => {
+                let mut line = [0u8; LINE_MAX];
+                match read_line(&mut serial_rx, &mut line).await.and_then(parse_velocity) {
+                    Some((l, r)) => {
+                        debug!("Received velocity command: left={} rad/s, right={} rad/s", l, r);
+                        Some(MotorCommand::SetVelocity(l, r))
+                    }
+                    None => {
+                        warn!("Invalid velocity command");
+                        continue;
+                    }
+                }
+            }
+
+            // Gains : "K\n" pour les lire, "K<kp>,<ki>,<kff>,<dmin>\n" pour les changer.
+            b'K' => {
+                let mut line = [0u8; LINE_MAX];
+                let Some(text) = read_line(&mut serial_rx, &mut line).await else {
+                    warn!("Invalid gains command");
+                    continue;
+                };
+                if !text.is_empty() {
+                    match parse_gains(text) {
+                        Some(g) => {
+                            GAINS.lock(|c| c.set(g));
+                            info!("New gains: {}", g);
+                        }
+                        None => {
+                            warn!("Invalid gains: {=str}", text);
+                            continue;
+                        }
+                    }
+                }
+                transmit_gains(&mut serial_tx).await;
+                None
+            }
+
             // Ignore unrecognized commands
             _ => continue,
         };
@@ -100,9 +145,65 @@ fn parse_pattern(buf: [u8; CMD_LENGTH]) -> Option<(i32, i32)> {
 }
 
 
+/// Lit la suite d'une commande jusqu'à '\n' ou '\r'. `None` si trop longue,
+/// interrompue (plus de LINE_TIMEOUT entre deux octets) ou invalide.
+async fn read_line<'a>(
+    serial_rx: &mut RingBufferedUartRx<'static>,
+    buf: &'a mut [u8; LINE_MAX],
+) -> Option<&'a str> {
+    let mut n = 0;
+    loop {
+        let mut byte = [0u8; 1];
+        match with_timeout(LINE_TIMEOUT, serial_rx.read(&mut byte)).await {
+            Ok(Ok(_)) => {}
+            _ => return None,
+        }
+        if byte[0] == b'\n' || byte[0] == b'\r' {
+            break;
+        }
+        if n == LINE_MAX {
+            return None;
+        }
+        buf[n] = byte[0];
+        n += 1;
+    }
+    core::str::from_utf8(&buf[..n]).ok()
+}
+
+/// "3142,-1571" (mrad/s) → (3.142, -1.571) rad/s, bornés à ±MAX_SPEED.
+fn parse_velocity(text: &str) -> Option<(f32, f32)> {
+    let (l, r) = text.split_once(',')?;
+    let to_rad = |s: &str| s.trim().parse::<i32>().ok().map(|v| (v as f32 / 1000.0).clamp(-MAX_SPEED, MAX_SPEED));
+    Some((to_rad(l)?, to_rad(r)?))
+}
+
+/// "kp,ki,kff,dmin" → gains, refusés s'ils sont négatifs ou absurdes.
+fn parse_gains(text: &str) -> Option<Gains> {
+    let mut values = [0.0f32; 4];
+    let mut fields = text.split(',');
+    for v in values.iter_mut() {
+        *v = fields.next()?.trim().parse().ok()?;
+        if !v.is_finite() || *v < 0.0 || *v > 100.0 {
+            return None;
+        }
+    }
+    if fields.next().is_some() || values[3] > 0.9 {
+        return None;
+    }
+    Some(Gains { kp: values[0], ki: values[1], kff: values[2], dmin: values[3] })
+}
+
+/// Envoie `K:kp,ki,kff,dmin`.
+async fn transmit_gains(serial: &mut UartTx<'static, Async>) {
+    let g = GAINS.lock(|c| c.get());
+    let buf: String<80> = format!("K:{},{},{},{}\r\n", g.kp, g.ki, g.kff, g.dmin).expect("format macro failed");
+    serial.write(buf.as_bytes()).await.unwrap();
+}
+
 /// Envoie `!AAAA,BBBB L:vit,pos R:vit,pos C:<pilote> F:<défaut>`.
 /// La consigne affichée est celle réellement appliquée aux moteurs : si la radio
-/// a la main, une commande USB n'y apparaît donc pas.
+/// a la main, une commande USB n'y apparaît donc pas. En mode vitesse, c'est le
+/// rapport cyclique choisi par la régulation.
 async fn transmit_state(serial: &mut UartTx<'static, Async>, sent: Option<MotorCommand>) {
     let state = ODOM_STATE.lock(|s| s.get());
     let odom_left = &state.odom_left;
@@ -114,14 +215,12 @@ async fn transmit_state(serial: &mut UartTx<'static, Async>, sent: Option<MotorC
         Some(cmd) if status.owner == Owner::Usb && status.fault != Fault::Stall => cmd,
         _ => status.applied,
     };
-    let (alpha_l, alpha_r) = match shown {
-        MotorCommand::SetSpeed(alpha_left, alpha_right) => {
-            (alpha_left as i32 + ZERO, alpha_right as i32 + ZERO)
-        },
-        MotorCommand::Brake | MotorCommand::Stop => {
-            (ZERO, ZERO)
-        },
+    let (al, ar) = match shown {
+        MotorCommand::SetSpeed(l, r) => (l, r),
+        MotorCommand::SetVelocity(..) => status.output,
+        MotorCommand::Brake | MotorCommand::Stop => (0, 0),
     };
+    let (alpha_l, alpha_r) = (al as i32 + ZERO, ar as i32 + ZERO);
 
     let buf: String<112> = format!("!{:04},{:04} L:{:+},{:+} R:{:+},{:+} C:{} F:{}\r\n",
             alpha_l, alpha_r,

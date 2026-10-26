@@ -41,8 +41,7 @@ use modelidar::tasks::sbus::sbus_task;
     spawner.spawn(uart_task(board.serial_usb).unwrap());
     
     // Spawn the odometry task
-    let odom_interval = Duration::from_millis(100);
-    spawner.spawn(odometry_task(odom_interval, board.qei_left, board.qei_right).unwrap());
+    spawner.spawn(odometry_task(board.qei_left, board.qei_right).unwrap());
 
     // Spawn the motors task
     spawner.spawn(motors_task(board.motor_left, board.motor_right, board.max_duty).unwrap());

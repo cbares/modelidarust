@@ -4,6 +4,9 @@
 //! - `#AAAA,BBBB`   consigne gauche, droite dans [0, 1000], 500 = arrêt
 //! - `/`            arrêt (roue libre)
 //! - `*`            freinage
+//! - `V<g>,<d>\n`   vitesse des roues en mrad/s (régulée par le firmware)
+//! - `K\n`          lit les gains, `K<kp>,<ki>,<kff>,<dmin>\n` les change
+//!   (réponse supplémentaire `K:kp,ki,kff,dmin`)
 //!
 //! Réponse : `!AAAA,BBBB L:vit,pos R:vit,pos C:<pilote> F:<défaut>`
 
@@ -65,6 +68,22 @@ pub fn speed_frame(throttle: i32, steer: i32) -> String {
     format!("#{:04},{:04}", left + ZERO, right + ZERO)
 }
 
+/// Trame de consigne de vitesse, avec le même mixage : avance et direction en tr/s.
+pub fn velocity_frame(throttle_rps: f32, steer_rps: f32) -> String {
+    let mrad = |rps: f32| (rps * std::f32::consts::TAU * 1000.0).round() as i32;
+    format!("V{},{}\n", mrad(throttle_rps + steer_rps), mrad(throttle_rps - steer_rps))
+}
+
+/// Gains renvoyés par la carte : `K:kp,ki,kff,dmin`.
+pub fn parse_gains(line: &str) -> Option<[f32; 4]> {
+    let mut out = [0.0; 4];
+    let mut fields = line.trim().strip_prefix("K:")?.split(',');
+    for v in out.iter_mut() {
+        *v = fields.next()?.parse().ok()?;
+    }
+    fields.next().is_none().then_some(out)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -91,6 +110,20 @@ mod tests {
         assert_eq!(parse("MCU started"), None);
         assert_eq!(parse("!0500,0500 L:+0,+0 R:+0,+0 C:USB"), None);
         assert_eq!(parse("!0500,0500 L:x,+0 R:+0,+0 C:USB F:-"), None);
+    }
+
+    #[test]
+    fn velocity_frames() {
+        assert_eq!(velocity_frame(0.0, 0.0), "V0,0\n");
+        assert_eq!(velocity_frame(0.5, 0.0), "V3142,3142\n");
+        assert_eq!(velocity_frame(0.0, 0.25), "V1571,-1571\n");
+    }
+
+    #[test]
+    fn gains() {
+        assert_eq!(parse_gains("K:0.05,0.5,0.05,0.2\r"), Some([0.05, 0.5, 0.05, 0.2]));
+        assert_eq!(parse_gains("K:0.05,0.5"), None);
+        assert_eq!(parse_gains("MCU started"), None);
     }
 
     #[test]

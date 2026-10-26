@@ -20,7 +20,7 @@ use ratatui::text::{Line, Span};
 use ratatui::widgets::{Block, Paragraph};
 use ratatui::{DefaultTerminal, Frame};
 
-use protocol::{Reply, ZERO, parse, speed_frame};
+use protocol::{Reply, ZERO, parse, parse_gains, speed_frame, velocity_frame};
 
 const BAUDRATE: u32 = 115_200;
 /// Pas codeur par tour de roue (src/tasks/odometry.rs).
@@ -29,8 +29,20 @@ const TICKS_PER_REV: f32 = 544.0;
 const POLL_PERIOD: Duration = Duration::from_millis(100);
 /// Sans réponse pendant ce délai, la liaison est affichée perdue.
 const LINK_LOST: Duration = Duration::from_millis(500);
-/// Incrément de consigne par appui (10 %).
+/// Mode PWM : incrément de consigne par appui (10 %).
 const STEP: i32 = 50;
+/// Mode vitesse : incrément par appui, en tr/s, et maximum.
+const STEP_RPS: f32 = 0.1;
+const MAX_STEPS_RPS: i32 = 50;
+
+/// Mode de pilotage.
+#[derive(Clone, Copy, PartialEq)]
+enum Mode {
+    /// Rapport cyclique direct (`#`).
+    Duty,
+    /// Vitesse régulée par le firmware (`V`).
+    Velocity,
+}
 
 /// Messages du fil de lecture série.
 enum Incoming {
@@ -40,8 +52,14 @@ enum Incoming {
 
 struct App {
     port_name: String,
+    mode: Mode,
+    /// Avance et direction, en nombre d'appuis (10 % ou 0,1 tr/s chacun).
     throttle: i32,
     steer: i32,
+    /// Derniers gains lus sur la carte.
+    gains: Option<[f32; 4]>,
+    /// Saisie d'une commande libre (touche `:`), envoyée telle quelle.
+    input: Option<String>,
     last_sent: String,
     state: Option<Reply>,
     last_reply: Option<Instant>,
@@ -50,6 +68,33 @@ struct App {
 }
 
 impl App {
+    /// Trame de consigne pour la position actuelle des manettes.
+    fn command_frame(&self) -> String {
+        match self.mode {
+            Mode::Duty => speed_frame(self.throttle * STEP, self.steer * STEP),
+            Mode::Velocity => velocity_frame(self.throttle as f32 * STEP_RPS, self.steer as f32 * STEP_RPS),
+        }
+    }
+
+    fn max_steps(&self) -> i32 {
+        match self.mode {
+            Mode::Duty => ZERO / STEP,
+            Mode::Velocity => MAX_STEPS_RPS,
+        }
+    }
+
+    /// Valeur affichée pour un nombre d'appuis, et sa barre.
+    fn describe(&self, steps: i32) -> String {
+        match self.mode {
+            Mode::Duty => format!("{:+5}  {}", steps * STEP, bar(steps * STEP)),
+            Mode::Velocity => format!(
+                "{:+5.1} tr/s  {}",
+                steps as f32 * STEP_RPS,
+                bar(steps * ZERO / MAX_STEPS_RPS)
+            ),
+        }
+    }
+
     fn note(&mut self, line: String) {
         self.other_lines.push_back(line);
         while self.other_lines.len() > 3 {
@@ -69,8 +114,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let mut app = App {
         port_name,
+        mode: Mode::Duty,
         throttle: 0,
         steer: 0,
+        gains: None,
+        input: None,
         last_sent: "?".into(),
         state: None,
         last_reply: None,
@@ -145,6 +193,8 @@ fn run(
     rx: &Receiver<Incoming>,
 ) -> io::Result<()> {
     let mut next_poll = Instant::now();
+    // Lit les gains de régulation au démarrage.
+    port.write_all(b"K\n")?;
     loop {
         terminal.draw(|f| draw(f, app))?;
 
@@ -154,25 +204,46 @@ fn run(
             && let Event::Key(key) = event::read()?
             && key.kind == KeyEventKind::Press
         {
-            match key.code {
-                KeyCode::Char('q') | KeyCode::Char('Q') | KeyCode::Esc => break,
-                KeyCode::Up => app.throttle = (app.throttle + STEP).min(ZERO),
-                KeyCode::Down => app.throttle = (app.throttle - STEP).max(-ZERO),
-                KeyCode::Right => app.steer = (app.steer + STEP).min(ZERO),
-                KeyCode::Left => app.steer = (app.steer - STEP).max(-ZERO),
-                KeyCode::Char(' ') => (app.throttle, app.steer) = (0, 0),
-                KeyCode::Char('s') | KeyCode::Char('S') | KeyCode::Char('/') => {
+            let max = app.max_steps();
+            match (&mut app.input, key.code) {
+                // Saisie d'une commande libre.
+                (Some(text), KeyCode::Enter) => {
+                    frame = Some(format!("{text}\n"));
+                    app.input = None;
+                }
+                (Some(_), KeyCode::Esc) => app.input = None,
+                (Some(text), KeyCode::Backspace) => {
+                    text.pop();
+                }
+                (Some(text), KeyCode::Char(c)) => text.push(c),
+                (Some(_), _) => {}
+                (None, KeyCode::Char(':')) => app.input = Some(String::new()),
+
+                (None, KeyCode::Char('q') | KeyCode::Char('Q') | KeyCode::Esc) => break,
+                (None, KeyCode::Char('v') | KeyCode::Char('V')) => {
+                    app.mode = if app.mode == Mode::Duty { Mode::Velocity } else { Mode::Duty };
+                    (app.throttle, app.steer) = (0, 0);
+                    frame = Some(app.command_frame());
+                }
+                (None, KeyCode::Up) => app.throttle = (app.throttle + 1).min(max),
+                (None, KeyCode::Down) => app.throttle = (app.throttle - 1).max(-max),
+                (None, KeyCode::Right) => app.steer = (app.steer + 1).min(max),
+                (None, KeyCode::Left) => app.steer = (app.steer - 1).max(-max),
+                (None, KeyCode::Char(' ')) => (app.throttle, app.steer) = (0, 0),
+                (None, KeyCode::Char('s') | KeyCode::Char('S') | KeyCode::Char('/')) => {
                     (app.throttle, app.steer) = (0, 0);
                     frame = Some("/".to_string());
                 }
-                KeyCode::Char('b') | KeyCode::Char('B') | KeyCode::Char('*') => {
+                (None, KeyCode::Char('b') | KeyCode::Char('B') | KeyCode::Char('*')) => {
                     (app.throttle, app.steer) = (0, 0);
                     frame = Some("*".to_string());
                 }
-                _ => {}
+                (None, _) => {}
             }
-            if matches!(key.code, KeyCode::Up | KeyCode::Down | KeyCode::Left | KeyCode::Right | KeyCode::Char(' ')) {
-                frame = Some(speed_frame(app.throttle, app.steer));
+            if app.input.is_none()
+                && matches!(key.code, KeyCode::Up | KeyCode::Down | KeyCode::Left | KeyCode::Right | KeyCode::Char(' '))
+            {
+                frame = Some(app.command_frame());
             }
         }
 
@@ -180,7 +251,7 @@ fn run(
         let now = Instant::now();
         if let Some(frame) = frame {
             port.write_all(frame.as_bytes())?;
-            app.last_sent = frame;
+            app.last_sent = frame.trim_end().to_string();
             next_poll = now + POLL_PERIOD;
         } else if now >= next_poll {
             port.write_all(b"?")?;
@@ -189,13 +260,16 @@ fn run(
 
         for msg in rx.try_iter() {
             match msg {
-                Incoming::Line(line) => match parse(&line) {
-                    Some(reply) => {
+                Incoming::Line(line) => {
+                    if let Some(reply) = parse(&line) {
                         app.state = Some(reply);
                         app.last_reply = Some(Instant::now());
+                    } else if let Some(gains) = parse_gains(&line) {
+                        app.gains = Some(gains);
+                    } else {
+                        app.note(line);
                     }
-                    None => app.note(line),
-                },
+                }
                 Incoming::Closed(err) => app.note(format!("liaison fermée : {err}")),
             }
         }
@@ -227,8 +301,8 @@ fn status_span(text: &str, ok: bool, warn: Color) -> Span<'static> {
 fn draw(frame: &mut Frame, app: &App) {
     let [header, asked, board, other, help] = Layout::vertical([
         Constraint::Length(3),
-        Constraint::Length(5),
-        Constraint::Length(8),
+        Constraint::Length(6),
+        Constraint::Length(9),
         Constraint::Length(4),
         Constraint::Min(0),
     ])
@@ -251,8 +325,15 @@ fn draw(frame: &mut Frame, app: &App) {
 
     frame.render_widget(
         Paragraph::new(vec![
-            Line::from(format!("avance     {:+5}  {}", app.throttle, bar(app.throttle))),
-            Line::from(format!("direction  {:+5}  {}", app.steer, bar(app.steer))),
+            Line::from(vec![
+                "mode : ".into(),
+                match app.mode {
+                    Mode::Duty => "PWM direct (#)".bold(),
+                    Mode::Velocity => "vitesse régulée (V)".bold().cyan(),
+                },
+            ]),
+            Line::from(format!("avance     {}", app.describe(app.throttle))),
+            Line::from(format!("direction  {}", app.describe(app.steer))),
             Line::from(format!("dernière trame : {}", app.last_sent)),
         ])
         .block(Block::new().title("Demandé".underlined())),
@@ -290,6 +371,10 @@ fn draw(frame: &mut Frame, app: &App) {
                 wheel("D", &s.right),
                 Line::from(vec!["pilote : ".into(), status_span(owner, s.owner == "USB", Color::Yellow)]),
                 Line::from(vec!["défaut : ".into(), status_span(fault, s.fault == "-", Color::Red)]),
+                Line::from(match app.gains {
+                    Some([kp, ki, kff, dmin]) => format!("gains : kp {kp}  ki {ki}  kff {kff}  dmin {dmin}"),
+                    None => "gains : inconnus".to_string(),
+                }),
             ]
         }
     };
@@ -298,13 +383,22 @@ fn draw(frame: &mut Frame, app: &App) {
         inset(board),
     );
 
-    let other_lines: Vec<Line> = app.other_lines.iter().map(|l| Line::from(format!("> {l}")).dim()).collect();
+    let mut other_lines: Vec<Line> = app.other_lines.iter().map(|l| Line::from(format!("> {l}")).dim()).collect();
+    if let Some(text) = &app.input {
+        other_lines.push(Line::from(vec![
+            "commande : ".bold().yellow(),
+            format!("{text}▏").into(),
+            "   (Entrée : envoyer, Échap : annuler)".dim(),
+        ]));
+    }
     frame.render_widget(Paragraph::new(other_lines), inset(other));
 
     frame.render_widget(
         Paragraph::new(vec![
-            Line::from("↑ / ↓   avancer / reculer (±10 %)"),
-            Line::from("← / →   tourner (±10 %)"),
+            Line::from("↑ / ↓   avancer / reculer (±10 % ou ±0,1 tr/s)"),
+            Line::from("← / →   tourner"),
+            Line::from("v       mode PWM direct / vitesse régulée"),
+            Line::from(":       commande libre, ex. K0.05,0.5,0.05,0.2 (gains)"),
             Line::from("espace  consigne neutre (réarme après un blocage)"),
             Line::from("s ou /  arrêt roue libre"),
             Line::from("b ou *  freinage"),
