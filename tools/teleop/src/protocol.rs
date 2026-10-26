@@ -6,7 +6,7 @@
 //! - `*`            freinage
 //! - `V<g>,<d>\n`   vitesse des roues en mrad/s (régulée par le firmware)
 //! - `K\n`          lit les gains, `K<kp>,<ki>,<kff>,<dmin>\n` les change
-//!   (réponse supplémentaire `K:kp,ki,kff,dmin`)
+//!   (réponse `K:kp,ki,kff,dmin` au lieu de l'état)
 //!
 //! Réponse : `!AAAA,BBBB L:vit,pos R:vit,pos C:<pilote> F:<défaut>`
 

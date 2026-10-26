@@ -118,8 +118,11 @@ pub async fn uart_task(
                         }
                     }
                 }
+                // Une seule ligne de réponse, comme pour les autres commandes :
+                // `K:...` à la place de l'état.
+                USB_ALIVE.signal(());
                 transmit_gains(&mut serial_tx).await;
-                None
+                continue;
             }
 
             // Ignore unrecognized commands

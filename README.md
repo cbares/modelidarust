@@ -66,7 +66,7 @@ USART2, relié au port série USB du ST-Link (`/dev/ttyACM0`), 115 200 bauds 8N1
 | `K`          | lit les gains de régulation, terminée par `\n`                     |
 | `K<kp>,<ki>,<kff>,<dmin>` | change les gains, terminée par `\n` (perdus au redémarrage) |
 
-Chaque trame reçoit une réponse :
+Chaque trame reçoit une ligne de réponse, l'état :
 
 ```text
 !0700,0600 L:+600,+420 R:+300,+210 C:USB F:-
@@ -79,7 +79,8 @@ Chaque trame reçoit une réponse :
 | `C:`         | qui pilote : `USB`, `RC` (radiocommande) ou `LOST` (radio perdue) |
 | `F:`         | défaut : `-`, `USB_TIMEOUT` ou `STALL`                            |
 
-`K` reçoit en plus une ligne `K:kp,ki,kff,dmin`.
+Exception : `K` répond par `K:kp,ki,kff,dmin` au lieu de l'état. Chaque commande
+reçoit ainsi exactement une ligne.
 
 Pendant que les moteurs tournent, le PC doit envoyer une trame au moins toutes les
 500 ms (un `?` suffit), sinon la carte arrête les moteurs.
